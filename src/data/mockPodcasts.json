@@ -1,6 +1,7 @@
 {
   "podcasts": [
     {
+      "id": 1,
       "title": "The Joe Rogan Experience",
       "description": "The Joe Rogan Experience is a long-form podcast where Joe Rogan has conversations with guests about various topics.",
       "imageUrl": "https://example.com/joe_rogan_experience.jpg",
@@ -13,6 +14,7 @@
       "reviews": 218394
     },
     {
+      "id": 2,
       "title": "Serial",
       "description": "Serial is a podcast that tells one true story over the course of a season.",
       "imageUrl": "https://example.com/serial.jpg",
@@ -25,6 +27,7 @@
       "reviews": 18295
     },
     {
+      "id": 3,
       "title": "Science Vs",
       "description": "Science Vs is the show that pits facts against popular myths and misconceptions.",
       "imageUrl": "https://example.com/science_vs.jpg",
@@ -37,6 +40,7 @@
       "reviews": 8476
     },
     {
+      "id": 4,
       "title": "The Daily",
       "description": "This is how the news should sound. Twenty minutes a day, five days a week.",
       "imageUrl": "https://example.com/the_daily.jpg",
@@ -49,6 +53,7 @@
       "reviews": 13695
     },
     {
+      "id": 5,
       "title": "Freakonomics Radio",
       "description": "Discover the hidden side of everything with Stephen J. Dubner, co-author of the Freakonomics books.",
       "imageUrl": "https://example.com/freakonomics_radio.jpg",
@@ -61,6 +66,7 @@
       "reviews": 11432
     },
     {
+      "id": 6,
       "title": "Radiolab",
       "description": "Radiolab is a show about curiosity. Where sound illuminates ideas, and the boundaries blur between science, philosophy, and human experience.",
       "imageUrl": "https://example.com/radiolab.jpg",
@@ -73,6 +79,7 @@
       "reviews": 9234
     },
     {
+      "id": 7,
       "title": "How I Built This",
       "description": "Guy Raz dives into the stories behind some of the world's best-known companies.",
       "imageUrl": "https://example.com/how_i_built_this.jpg",
@@ -85,6 +92,7 @@
       "reviews": 8754
     },
     {
+      "id": 8,
       "title": "The Tim Ferriss Show",
       "description": "Tim Ferriss deconstructs world-class performers from eclectic areas (investing, sports, business, art, etc.) to extract the tactics, tools, and routines you can use.",
       "imageUrl": "https://example.com/tim_ferriss_show.jpg",
@@ -97,6 +105,7 @@
       "reviews": 12578
     },
     {
+      "id": 9,
       "title": "Song Exploder",
       "description": "Song Exploder is a podcast where musicians take apart their songs and piece by piece, tell the story of how they were made.",
       "imageUrl": "https://example.com/song_exploder.jpg",
@@ -109,6 +118,7 @@
       "reviews": 9863
     },
     {
+      "id": 10,
       "title": "Stuff You Should Know",
       "description": "If you've ever wanted to know about champagne, satanism, the Stonewall Uprising, chaos theory, LSD, El Nino, true crime, and Rosa Parks, then Josh and Chuck have you covered.",
       "imageUrl": "https://example.com/stuff_you_should_know.jpg",
