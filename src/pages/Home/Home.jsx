@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PODCASTS from "../../data/mockPodcasts.json";
 import { PodcastSearchBar } from "../../components/PodcastSearchBar/PodcastSearchBar";
+import { PodcastOrderBy } from "../../components/PodcastOrderBy/PodcastOrderBy";
 
 export const Home = () => {
   const originalPodcasts = PODCASTS.podcasts;
@@ -9,6 +10,11 @@ export const Home = () => {
   return (
     <div>
       <PodcastSearchBar
+        originalPodcasts={originalPodcasts}
+        setFilteredPodcasts={setFilteredPodcasts}
+      />
+
+      <PodcastOrderBy
         originalPodcasts={originalPodcasts}
         setFilteredPodcasts={setFilteredPodcasts}
       />
