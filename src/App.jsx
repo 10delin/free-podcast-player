@@ -1,5 +1,5 @@
-import { Home } from "./pages/Home/Home";
+import { AppRoutes } from "./routes";
 
 export const App = () => {
-  return <Home />;
+  return <AppRoutes />;
 };

@@ -9,9 +9,26 @@
       "category": "Comedy",
       "duration": "2h 30m",
       "releaseDate": "2023-07-15",
-      "episodes": 1578,
-      "rating": 4.9,
-      "reviews": 218394
+      "episodes": [
+        {
+          "id": 101,
+          "title": "Episode 1: Introduction to The Joe Rogan Experience",
+          "description": "In this first episode, Joe Rogan introduces his new podcast and talks about what to expect in future episodes.",
+          "duration": "10m",
+          "releaseDate": "2023-07-15",
+          "rating": 4.8,
+          "reviews": 102
+        },
+        {
+          "id": 102,
+          "title": "Episode 2: Joe Rogan and Elon Musk",
+          "description": "Joe Rogan sits down with Elon Musk to discuss technology, space exploration, and the future of humanity.",
+          "duration": "3h",
+          "releaseDate": "2023-07-16",
+          "rating": 4.9,
+          "reviews": 254
+        }
+      ]
     },
     {
       "id": 2,
@@ -22,9 +39,26 @@
       "category": "True Crime",
       "duration": "1h",
       "releaseDate": "2023-06-30",
-      "episodes": 56,
-      "rating": 4.7,
-      "reviews": 18295
+      "episodes": [
+        {
+          "id": 201,
+          "title": "Season 1: The Murder Case",
+          "description": "In the first season of Serial, Sarah Koenig investigates a complex murder case and uncovers surprising details.",
+          "duration": "1h",
+          "releaseDate": "2023-06-30",
+          "rating": 4.6,
+          "reviews": 124
+        },
+        {
+          "id": 202,
+          "title": "Season 2: The Missing Person",
+          "description": "In the second season, Sarah Koenig delves into the mysterious disappearance of a young person.",
+          "duration": "1h",
+          "releaseDate": "2023-07-02",
+          "rating": 4.7,
+          "reviews": 98
+        }
+      ]
     },
     {
       "id": 3,
@@ -35,9 +69,26 @@
       "category": "Science",
       "duration": "45m",
       "releaseDate": "2023-07-01",
-      "episodes": 122,
-      "rating": 4.5,
-      "reviews": 8476
+      "episodes": [
+        {
+          "id": 301,
+          "title": "Episode 1: Debunking Common Health Myths",
+          "description": "In this episode, Wendy Zukerman takes on common health myths and separates fact from fiction.",
+          "duration": "40m",
+          "releaseDate": "2023-07-01",
+          "rating": 4.5,
+          "reviews": 76
+        },
+        {
+          "id": 302,
+          "title": "Episode 2: The Truth About Climate Change",
+          "description": "Wendy Zukerman delves into the science of climate change and its impact on the planet.",
+          "duration": "50m",
+          "releaseDate": "2023-07-03",
+          "rating": 4.7,
+          "reviews": 88
+        }
+      ]
     },
     {
       "id": 4,
@@ -48,9 +99,26 @@
       "category": "News",
       "duration": "20m",
       "releaseDate": "2023-06-25",
-      "episodes": 231,
-      "rating": 4.8,
-      "reviews": 13695
+      "episodes": [
+        {
+          "id": 401,
+          "title": "Episode 1: Headlines for the Day",
+          "description": "In this episode, The Daily presents the top headlines and news stories from around the world.",
+          "duration": "20m",
+          "releaseDate": "2023-06-25",
+          "rating": 4.8,
+          "reviews": 87
+        },
+        {
+          "id": 402,
+          "title": "Episode 2: In-Depth Analysis of Current Affairs",
+          "description": "The New York Times provides in-depth analysis and reporting on major current affairs.",
+          "duration": "25m",
+          "releaseDate": "2023-06-26",
+          "rating": 4.9,
+          "reviews": 112
+        }
+      ]
     },
     {
       "id": 5,
@@ -61,9 +129,26 @@
       "category": "Education",
       "duration": "50m",
       "releaseDate": "2023-06-28",
-      "episodes": 356,
-      "rating": 4.6,
-      "reviews": 11432
+      "episodes": [
+        {
+          "id": 501,
+          "title": "Episode 1: Unconventional Economics",
+          "description": "Stephen J. Dubner explores unconventional economic ideas and their implications.",
+          "duration": "45m",
+          "releaseDate": "2023-06-28",
+          "rating": 4.6,
+          "reviews": 66
+        },
+        {
+          "id": 502,
+          "title": "Episode 2: The Power of Incentives",
+          "description": "The podcast discusses how incentives drive human behavior and shape various outcomes.",
+          "duration": "50m",
+          "releaseDate": "2023-06-29",
+          "rating": 4.7,
+          "reviews": 72
+        }
+      ]
     },
     {
       "id": 6,
@@ -74,9 +159,26 @@
       "category": "Science",
       "duration": "1h",
       "releaseDate": "2023-07-02",
-      "episodes": 189,
-      "rating": 4.7,
-      "reviews": 9234
+      "episodes": [
+        {
+          "id": 601,
+          "title": "Episode 1: Exploring the Nature of Reality",
+          "description": "Radiolab explores the concept of reality and how our perceptions shape our understanding.",
+          "duration": "55m",
+          "releaseDate": "2023-07-02",
+          "rating": 4.7,
+          "reviews": 58
+        },
+        {
+          "id": 602,
+          "title": "Episode 2: The Human Mind and Consciousness",
+          "description": "The podcast delves into the mysteries of the human mind and the nature of consciousness.",
+          "duration": "1h",
+          "releaseDate": "2023-07-03",
+          "rating": 4.8,
+          "reviews": 64
+        }
+      ]
     },
     {
       "id": 7,
@@ -87,9 +189,26 @@
       "category": "Business",
       "duration": "1h 15m",
       "releaseDate": "2023-07-05",
-      "episodes": 109,
-      "rating": 4.8,
-      "reviews": 8754
+      "episodes": [
+        {
+          "id": 701,
+          "title": "Episode 1: The Success Story of a Tech Startup",
+          "description": "Guy Raz interviews the founders of a successful tech startup and explores their journey.",
+          "duration": "1h",
+          "releaseDate": "2023-07-05",
+          "rating": 4.8,
+          "reviews": 82
+        },
+        {
+          "id": 702,
+          "title": "Episode 2: Building a Global Brand from Scratch",
+          "description": "The podcast features the story of an entrepreneur who built a global brand from scratch.",
+          "duration": "1h 10m",
+          "releaseDate": "2023-07-06",
+          "rating": 4.9,
+          "reviews": 94
+        }
+      ]
     },
     {
       "id": 8,
@@ -100,9 +219,26 @@
       "category": "Self-Improvement",
       "duration": "1h 30m",
       "releaseDate": "2023-07-10",
-      "episodes": 294,
-      "rating": 4.6,
-      "reviews": 12578
+      "episodes": [
+        {
+          "id": 801,
+          "title": "Episode 1: The Habits of High Performers",
+          "description": "Tim Ferriss talks to high achievers about their habits and routines for success.",
+          "duration": "1h 20m",
+          "releaseDate": "2023-07-10",
+          "rating": 4.6,
+          "reviews": 69
+        },
+        {
+          "id": 802,
+          "title": "Episode 2: The Mindset for Overcoming Challenges",
+          "description": "The podcast explores the mindset required to overcome challenges and achieve goals.",
+          "duration": "1h 35m",
+          "releaseDate": "2023-07-11",
+          "rating": 4.7,
+          "reviews": 78
+        }
+      ]
     },
     {
       "id": 9,
@@ -113,9 +249,26 @@
       "category": "Music",
       "duration": "40m",
       "releaseDate": "2023-06-29",
-      "episodes": 85,
-      "rating": 4.7,
-      "reviews": 9863
+      "episodes": [
+        {
+          "id": 901,
+          "title": "Episode 1: The Making of a Chart-Topping Hit",
+          "description": "Song Exploder goes behind the scenes of a chart-topping hit and reveals its creation process.",
+          "duration": "35m",
+          "releaseDate": "2023-06-29",
+          "rating": 4.7,
+          "reviews": 74
+        },
+        {
+          "id": 902,
+          "title": "Episode 2: The Evolution of a Musical Idea",
+          "description": "The podcast traces the evolution of a musical idea from inception to final production.",
+          "duration": "40m",
+          "releaseDate": "2023-06-30",
+          "rating": 4.8,
+          "reviews": 82
+        }
+      ]
     },
     {
       "id": 10,
@@ -126,9 +279,26 @@
       "category": "Education",
       "duration": "1h",
       "releaseDate": "2023-07-03",
-      "episodes": 306,
-      "rating": 4.9,
-      "reviews": 14563
+      "episodes": [
+        {
+          "id": 1001,
+          "title": "Episode 1: The Origins of Champagne",
+          "description": "In this episode, Josh and Chuck explore the fascinating history and origins of champagne.",
+          "duration": "45m",
+          "releaseDate": "2023-07-03",
+          "rating": 4.7,
+          "reviews": 122
+        },
+        {
+          "id": 1002,
+          "title": "Episode 2: Satanic Rituals Demystified",
+          "description": "Josh and Chuck delve into the myths and realities of satanic rituals.",
+          "duration": "50m",
+          "releaseDate": "2023-07-04",
+          "rating": 4.6,
+          "reviews": 98
+        }
+      ]
     }
   ]
 }
