@@ -1,0 +1,124 @@
+{
+  "podcasts": [
+    {
+      "title": "The Joe Rogan Experience",
+      "description": "The Joe Rogan Experience is a long-form podcast where Joe Rogan has conversations with guests about various topics.",
+      "imageUrl": "https://example.com/joe_rogan_experience.jpg",
+      "author": "Joe Rogan",
+      "category": "Comedy",
+      "duration": "2h 30m",
+      "releaseDate": "2023-07-15",
+      "episodes": 1578,
+      "rating": 4.9,
+      "reviews": 218394
+    },
+    {
+      "title": "Serial",
+      "description": "Serial is a podcast that tells one true story over the course of a season.",
+      "imageUrl": "https://example.com/serial.jpg",
+      "author": "Sarah Koenig",
+      "category": "True Crime",
+      "duration": "1h",
+      "releaseDate": "2023-06-30",
+      "episodes": 56,
+      "rating": 4.7,
+      "reviews": 18295
+    },
+    {
+      "title": "Science Vs",
+      "description": "Science Vs is the show that pits facts against popular myths and misconceptions.",
+      "imageUrl": "https://example.com/science_vs.jpg",
+      "author": "Wendy Zukerman",
+      "category": "Science",
+      "duration": "45m",
+      "releaseDate": "2023-07-01",
+      "episodes": 122,
+      "rating": 4.5,
+      "reviews": 8476
+    },
+    {
+      "title": "The Daily",
+      "description": "This is how the news should sound. Twenty minutes a day, five days a week.",
+      "imageUrl": "https://example.com/the_daily.jpg",
+      "author": "The New York Times",
+      "category": "News",
+      "duration": "20m",
+      "releaseDate": "2023-06-25",
+      "episodes": 231,
+      "rating": 4.8,
+      "reviews": 13695
+    },
+    {
+      "title": "Freakonomics Radio",
+      "description": "Discover the hidden side of everything with Stephen J. Dubner, co-author of the Freakonomics books.",
+      "imageUrl": "https://example.com/freakonomics_radio.jpg",
+      "author": "Stephen J. Dubner",
+      "category": "Education",
+      "duration": "50m",
+      "releaseDate": "2023-06-28",
+      "episodes": 356,
+      "rating": 4.6,
+      "reviews": 11432
+    },
+    {
+      "title": "Radiolab",
+      "description": "Radiolab is a show about curiosity. Where sound illuminates ideas, and the boundaries blur between science, philosophy, and human experience.",
+      "imageUrl": "https://example.com/radiolab.jpg",
+      "author": "Jad Abumrad and Robert Krulwich",
+      "category": "Science",
+      "duration": "1h",
+      "releaseDate": "2023-07-02",
+      "episodes": 189,
+      "rating": 4.7,
+      "reviews": 9234
+    },
+    {
+      "title": "How I Built This",
+      "description": "Guy Raz dives into the stories behind some of the world's best-known companies.",
+      "imageUrl": "https://example.com/how_i_built_this.jpg",
+      "author": "Guy Raz",
+      "category": "Business",
+      "duration": "1h 15m",
+      "releaseDate": "2023-07-05",
+      "episodes": 109,
+      "rating": 4.8,
+      "reviews": 8754
+    },
+    {
+      "title": "The Tim Ferriss Show",
+      "description": "Tim Ferriss deconstructs world-class performers from eclectic areas (investing, sports, business, art, etc.) to extract the tactics, tools, and routines you can use.",
+      "imageUrl": "https://example.com/tim_ferriss_show.jpg",
+      "author": "Tim Ferriss",
+      "category": "Self-Improvement",
+      "duration": "1h 30m",
+      "releaseDate": "2023-07-10",
+      "episodes": 294,
+      "rating": 4.6,
+      "reviews": 12578
+    },
+    {
+      "title": "Song Exploder",
+      "description": "Song Exploder is a podcast where musicians take apart their songs and piece by piece, tell the story of how they were made.",
+      "imageUrl": "https://example.com/song_exploder.jpg",
+      "author": "Hrishikesh Hirway",
+      "category": "Music",
+      "duration": "40m",
+      "releaseDate": "2023-06-29",
+      "episodes": 85,
+      "rating": 4.7,
+      "reviews": 9863
+    },
+    {
+      "title": "Stuff You Should Know",
+      "description": "If you've ever wanted to know about champagne, satanism, the Stonewall Uprising, chaos theory, LSD, El Nino, true crime, and Rosa Parks, then Josh and Chuck have you covered.",
+      "imageUrl": "https://example.com/stuff_you_should_know.jpg",
+      "author": "Josh Clark and Chuck Bryant",
+      "category": "Education",
+      "duration": "1h",
+      "releaseDate": "2023-07-03",
+      "episodes": 306,
+      "rating": 4.9,
+      "reviews": 14563
+    }
+  ]
+}
