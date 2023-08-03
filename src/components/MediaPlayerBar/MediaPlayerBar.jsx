@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const StyledWrapper = styled.div`
@@ -14,5 +15,12 @@ const StyledWrapper = styled.div`
 `;
 
 export const MediaPlayerBar = () => {
-  return <StyledWrapper>Reproductor multimedia</StyledWrapper>;
+  const { actualPodcast } = useSelector((state) => state);
+
+  return actualPodcast ? (
+    <StyledWrapper>
+      <p>{actualPodcast?.title}</p>
+      <p>{actualPodcast?.description}</p>
+    </StyledWrapper>
+  ) : null;
 };
