@@ -1,9 +1,10 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 
-export const PodcastOrderBy = ({ originalPodcasts, setFilteredPodcasts }) => {
-  const [orderBy, setOrderBy] = useState("asc");
+import PropTypes from "prop-types";
+
+export const OrderBy = ({ originalPodcasts, setFilteredContent }) => {
+  const [orderBy, setOrderBy] = useState("");
 
   const { t } = useTranslation();
 
@@ -42,7 +43,7 @@ export const PodcastOrderBy = ({ originalPodcasts, setFilteredPodcasts }) => {
       }
     });
 
-    setFilteredPodcasts(onFilteredPodcasts);
+    setFilteredContent(onFilteredPodcasts);
   };
 
   return (
@@ -63,12 +64,12 @@ export const PodcastOrderBy = ({ originalPodcasts, setFilteredPodcasts }) => {
   );
 };
 
-PodcastOrderBy.propTypes = {
+OrderBy.propTypes = {
   originalPodcasts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
     })
   ).isRequired,
-  setFilteredPodcasts: PropTypes.func.isRequired,
+  setFilteredContent: PropTypes.func.isRequired,
 };

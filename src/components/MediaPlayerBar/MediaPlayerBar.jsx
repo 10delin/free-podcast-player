@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+
 import styled from "styled-components";
 
 const StyledWrapper = styled.div`
@@ -15,12 +16,12 @@ const StyledWrapper = styled.div`
 `;
 
 export const MediaPlayerBar = () => {
-  const { actualPodcast } = useSelector((state) => state);
+  const actualEpisode = useSelector((state) => state.actualEpisode);
 
-  return actualPodcast ? (
+  return actualEpisode ? (
     <StyledWrapper data-cy="media-player-bar">
-      <p>{actualPodcast?.title}</p>
-      <p>{actualPodcast?.description}</p>
+      <p>{actualEpisode?.title}</p>
+      <p>{actualEpisode?.description}</p>
     </StyledWrapper>
   ) : null;
 };

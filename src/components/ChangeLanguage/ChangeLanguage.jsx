@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { styled } from "styled-components";
+
 import SpainIcon from "../../assets/images/spain.webp";
 import UkIcon from "../../assets/images/united-kingdom.webp";
-
-import { styled } from "styled-components";
 
 const StyledWrapper = styled.div`
   position: absolute;

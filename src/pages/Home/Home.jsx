@@ -1,44 +1,29 @@
 import { useState } from "react";
+
 import PODCASTS from "../../data/mockPodcasts.json";
-import { PodcastSearchBar } from "../../components/PodcastSearchBar/PodcastSearchBar";
-import { PodcastOrderBy } from "../../components/PodcastOrderBy/PodcastOrderBy";
-import { useNavigate } from "react-router";
+
+import { SearchBar } from "../../components/SearchBar/SearchBar";
+import { OrderBy } from "../../components/OrderBy/OrderBy";
+import { PodcastItem } from "../../components/PodcastItem/PodcastItem";
 
 export const Home = () => {
   const originalPodcasts = PODCASTS.podcasts;
   const [filteredPodcasts, setFilteredPodcasts] = useState(originalPodcasts);
-  const navigate = useNavigate();
 
   return (
     <div>
-      <PodcastSearchBar
+      <SearchBar
         originalPodcasts={originalPodcasts}
-        setFilteredPodcasts={setFilteredPodcasts}
+        setFilteredContent={setFilteredPodcasts}
       />
 
-      <PodcastOrderBy
+      <OrderBy
         originalPodcasts={originalPodcasts}
-        setFilteredPodcasts={setFilteredPodcasts}
+        setFilteredContent={setFilteredPodcasts}
       />
-      <ul>
-        {[...filteredPodcasts].map((podcast) => (
-          <div key={podcast.id}>
-            <li>
-              <img src={podcast.imageUrl} alt={podcast.title} />
-            </li>
-            <li> {podcast.title}</li>
-            <li>{podcast.description}</li>
-            <li>{podcast.releaseDate}</li>
-            <li>{podcast.duration}</li>
-            <button
-              onClick={() => navigate(`/podcast/${podcast.id}`)}
-              data-cy="go-to-podcast"
-            >
-              Go to podcast
-            </button>
-          </div>
-        ))}
-      </ul>
+      {[...filteredPodcasts].map((podcast) => (
+        <PodcastItem key={podcast.id} podcast={podcast} />
+      ))}
     </div>
   );
 };

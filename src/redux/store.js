@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import ActualPodcastReducer from "./reducers/actualPodcastSlice";
+
+import ActualEpisodeReducer from "./reducers/actualEpisodeSlice";
 
 const store = configureStore({
   reducer: {
-    actualPodcast: ActualPodcastReducer,
+    actualEpisode: ActualEpisodeReducer,
   },
 });
 export default store;

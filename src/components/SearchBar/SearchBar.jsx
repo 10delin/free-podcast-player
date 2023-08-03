@@ -1,14 +1,11 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 
-export const PodcastSearchBar = ({ originalPodcasts, setFilteredPodcasts }) => {
+import PropTypes from "prop-types";
+
+export const SearchBar = ({ originalPodcasts, setFilteredContent }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const { t } = useTranslation();
-
-  const OnSearchTermChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
 
   const OnSearchPodcast = (e) => {
     e.preventDefault();
@@ -18,19 +15,19 @@ export const PodcastSearchBar = ({ originalPodcasts, setFilteredPodcasts }) => {
     );
 
     if (onFilteredPodcasts.length === 0) {
-      alert("No se encontró el libro");
+      alert(t("searchBar.notFound"));
       setSearchTerm("");
-      setFilteredPodcasts(originalPodcasts);
+      setFilteredContent(originalPodcasts);
       return;
     }
 
-    setFilteredPodcasts(onFilteredPodcasts);
+    setFilteredContent(onFilteredPodcasts);
   };
 
   const removeFilter = (e) => {
     e.preventDefault();
     setSearchTerm("");
-    setFilteredPodcasts(originalPodcasts);
+    setFilteredContent(originalPodcasts);
   };
 
   return (
@@ -39,7 +36,7 @@ export const PodcastSearchBar = ({ originalPodcasts, setFilteredPodcasts }) => {
         type="text"
         placeholder={t("searchBar.placeHolder")}
         value={searchTerm}
-        onChange={OnSearchTermChange}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
       {searchTerm ? (
         <input
@@ -53,12 +50,12 @@ export const PodcastSearchBar = ({ originalPodcasts, setFilteredPodcasts }) => {
   );
 };
 
-PodcastSearchBar.propTypes = {
+SearchBar.propTypes = {
   originalPodcasts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
     })
   ).isRequired,
-  setFilteredPodcasts: PropTypes.func.isRequired,
+  setFilteredContent: PropTypes.func.isRequired,
 };
