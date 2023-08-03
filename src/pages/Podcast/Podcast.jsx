@@ -26,7 +26,9 @@ export const Podcast = () => {
 
   return (
     <div>
-      <button onClick={() => Navigate(`/`)}>Go to home</button>
+      <button onClick={() => Navigate(`/`)} data-cy="go-to-home">
+        Go to home
+      </button>
       <PodcastSearchBar
         originalPodcasts={podcast.episodes}
         setFilteredPodcasts={setFilteredEpisodes}
@@ -38,12 +40,17 @@ export const Podcast = () => {
       />
       <h1>{podcast?.title}</h1>
       {[...filteredEpisodes]?.map((episode) => (
-        <div key={episode.id}>
+        <div key={episode.id} data-cy="list-episodes">
           <h2>{episode.title}</h2>
           <p>{episode.description}</p>
           <p>{episode.releaseDate}</p>
           <p>{episode.duration}</p>
-          <button onClick={changeActualPodcast(episode)}>Reproducir</button>
+          <button
+            onClick={changeActualPodcast(episode)}
+            data-cy="change-actual-podcast"
+          >
+            Reproducir
+          </button>
         </div>
       ))}
     </div>

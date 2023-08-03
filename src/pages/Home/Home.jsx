@@ -30,7 +30,10 @@ export const Home = () => {
             <li>{podcast.description}</li>
             <li>{podcast.releaseDate}</li>
             <li>{podcast.duration}</li>
-            <button onClick={() => navigate(`/podcast/${podcast.id}`)}>
+            <button
+              onClick={() => navigate(`/podcast/${podcast.id}`)}
+              data-cy="go-to-podcast"
+            >
               Go to podcast
             </button>
           </div>

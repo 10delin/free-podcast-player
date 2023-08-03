@@ -47,11 +47,17 @@ export const PodcastOrderBy = ({ originalPodcasts, setFilteredPodcasts }) => {
 
   return (
     <div>
-      <select value={orderBy} onChange={onOrderByPodcast}>
+      <select value={orderBy} onChange={onOrderByPodcast} data-cy="order-by">
         <option value="">{t("orderBy.title")}</option>
-        <option value="name">{t("orderBy.name")}</option>
-        <option value="duration">{t("orderBy.duration")}</option>
-        <option value="date">{t("orderBy.released")}</option>
+        <option value="name" data-cy="order-by-name">
+          {t("orderBy.name")}
+        </option>
+        <option value="duration" data-cy="order-by-duration">
+          {t("orderBy.duration")}
+        </option>
+        <option value="date" data-cy="order-by-date">
+          {t("orderBy.released")}
+        </option>
       </select>
     </div>
   );

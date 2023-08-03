@@ -42,7 +42,12 @@ export const PodcastSearchBar = ({ originalPodcasts, setFilteredPodcasts }) => {
         onChange={OnSearchTermChange}
       />
       {searchTerm ? (
-        <input type="button" onClick={removeFilter} value="❌" />
+        <input
+          type="button"
+          onClick={removeFilter}
+          value="❌"
+          data-cy="button-reset-filter"
+        />
       ) : null}
     </form>
   );

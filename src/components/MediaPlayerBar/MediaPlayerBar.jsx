@@ -18,7 +18,7 @@ export const MediaPlayerBar = () => {
   const { actualPodcast } = useSelector((state) => state);
 
   return actualPodcast ? (
-    <StyledWrapper>
+    <StyledWrapper data-cy="media-player-bar">
       <p>{actualPodcast?.title}</p>
       <p>{actualPodcast?.description}</p>
     </StyledWrapper>
