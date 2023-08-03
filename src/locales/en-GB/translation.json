@@ -1,0 +1,18 @@
+{
+  "searchBar": {
+    "placeHolder": "Search Podcast"
+  },
+  "orderBy": {
+    "title": "Order by",
+    "name": "Name",
+    "duration": "Duration",
+    "released": "Released"
+  },
+
+  "titlesTable": {
+    "title": "title",
+    "description": "description",
+    "released": "released",
+    "duration": "duration"
+  }
+}

@@ -1,8 +1,10 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 export const PodcastSearchBar = ({ originalPodcasts, setFilteredPodcasts }) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const { t } = useTranslation();
 
   const OnSearchTermChange = (e) => {
     setSearchTerm(e.target.value);
@@ -33,11 +35,15 @@ export const PodcastSearchBar = ({ originalPodcasts, setFilteredPodcasts }) => {
 
   return (
     <form onSubmit={OnSearchPodcast}>
-      <input type="text" value={searchTerm} onChange={OnSearchTermChange} />
+      <input
+        type="text"
+        placeholder={t("searchBar.placeHolder")}
+        value={searchTerm}
+        onChange={OnSearchTermChange}
+      />
       {searchTerm ? (
         <input type="button" onClick={removeFilter} value="❌" />
       ) : null}
-      <button type="submit">Search</button>
     </form>
   );
 };

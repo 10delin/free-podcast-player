@@ -1,8 +1,11 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 export const PodcastOrderBy = ({ originalPodcasts, setFilteredPodcasts }) => {
   const [orderBy, setOrderBy] = useState("asc");
+
+  const { t } = useTranslation();
 
   const onOrderByPodcast = (e) => {
     setOrderBy(e.target.value);
@@ -45,10 +48,10 @@ export const PodcastOrderBy = ({ originalPodcasts, setFilteredPodcasts }) => {
   return (
     <div>
       <select value={orderBy} onChange={onOrderByPodcast}>
-        <option value="">Ordenar por</option>
-        <option value="name">Nombre</option>
-        <option value="duration">Duracion</option>
-        <option value="date">Mas reciente</option>
+        <option value="">{t("orderBy.title")}</option>
+        <option value="name">{t("orderBy.name")}</option>
+        <option value="duration">{t("orderBy.duration")}</option>
+        <option value="date">{t("orderBy.released")}</option>
       </select>
     </div>
   );
