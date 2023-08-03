@@ -8,8 +8,8 @@ import UkIcon from "../../assets/images/united-kingdom.webp";
 
 const StyledWrapper = styled.div`
   position: absolute;
-  top: 100px;
-  left: 0;
+  top: 10px;
+  left: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -25,14 +25,14 @@ const StyledWrapper = styled.div`
 
 const StyledContent = styled.div`
   display: flex;
-  background-color: ${({ $isSpanish }) => ($isSpanish ? "#699eec" : "#dbdbdb")};
+  background-color: ${({ $isSpanish }) =>
+    $isSpanish ? "#699eec" : "transparent"};
   color: #ffffff;
+  border: 1px solid #7a7a7a;
   align-items: center;
   justify-content: center;
-  padding: 7px;
-  border: 2px solid #ffffff;
+  padding: 5px 0px;
   border-radius: 5px;
-  margin-top: 20px;
   font-size: 1.5rem;
   font-weight: 600;
   width: 100%;
@@ -42,11 +42,20 @@ const StyledContent = styled.div`
     background-color: ${({ $isSpanish }) =>
       $isSpanish ? "#2472e7" : "#699eec"};
   }
+
+  @media (max-width: 768px) {
+    padding: 7px;
+  }
 `;
 
 const StyledImage = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+
+  @media (max-width: 768px) {
+    width: 25px;
+    height: 25px;
+  }
 `;
 
 export const ChangeLanguage = () => {

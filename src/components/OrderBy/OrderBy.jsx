@@ -2,6 +2,55 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const StyledWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  justify-self: end;
+  margin-bottom: 50px;
+`;
+
+const StyledSelect = styled.select`
+  position: relative;
+  border: none;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 2px solid transparent;
+  padding: 12px 10px;
+  width: 100%;
+  border-radius: 25px;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+
+  &:focus {
+    border: 2px solid #ffffff;
+  }
+`;
+
+const StyledOption = styled.option`
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 2px solid transparent;
+  padding: 15px 10px;
+  font-size: 13px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+
+  &:focus {
+    border: 2px solid #ffffff;
+  }
+
+  &:checked {
+    background-color: #414141;
+  }
+`;
 
 export const OrderBy = ({ originalPodcasts, setFilteredContent }) => {
   const [orderBy, setOrderBy] = useState("");
@@ -47,20 +96,24 @@ export const OrderBy = ({ originalPodcasts, setFilteredContent }) => {
   };
 
   return (
-    <div>
-      <select value={orderBy} onChange={onOrderByPodcast} data-cy="order-by">
-        <option value="">{t("orderBy.title")}</option>
-        <option value="name" data-cy="order-by-name">
+    <StyledWrapper>
+      <StyledSelect
+        value={orderBy}
+        onChange={onOrderByPodcast}
+        data-cy="order-by"
+      >
+        <StyledOption value="">{t("orderBy.title")}</StyledOption>
+        <StyledOption value="name" data-cy="order-by-name">
           {t("orderBy.name")}
-        </option>
-        <option value="duration" data-cy="order-by-duration">
+        </StyledOption>
+        <StyledOption value="duration" data-cy="order-by-duration">
           {t("orderBy.duration")}
-        </option>
-        <option value="date" data-cy="order-by-date">
+        </StyledOption>
+        <StyledOption value="date" data-cy="order-by-date">
           {t("orderBy.released")}
-        </option>
-      </select>
-    </div>
+        </StyledOption>
+      </StyledSelect>
+    </StyledWrapper>
   );
 };
 

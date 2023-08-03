@@ -27,11 +27,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    margin: 0;
     display: flex;
     place-content: center;
-    min-width: 320px;
-    min-height: 100vh;
   }
 
   h1 {
