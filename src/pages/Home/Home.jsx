@@ -22,12 +22,18 @@ export const Home = () => {
       />
       <ul>
         {[...filteredPodcasts].map((podcast) => (
-          <>
-            <li key={podcast.id}>{podcast.title}</li>
+          <div key={podcast.id}>
+            <li>
+              <img src={podcast.imageUrl} alt={podcast.title} />
+            </li>
+            <li> {podcast.title}</li>
+            <li>{podcast.description}</li>
+            <li>{podcast.releaseDate}</li>
+            <li>{podcast.duration}</li>
             <button onClick={() => navigate(`/podcast/${podcast.id}`)}>
               Go to podcast
             </button>
-          </>
+          </div>
         ))}
       </ul>
     </div>

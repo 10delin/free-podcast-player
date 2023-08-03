@@ -4,7 +4,7 @@
       "id": 1,
       "title": "The Joe Rogan Experience",
       "description": "The Joe Rogan Experience is a long-form podcast where Joe Rogan has conversations with guests about various topics.",
-      "imageUrl": "https://example.com/joe_rogan_experience.jpg",
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/587aec812994ca23948fd074/1510582602985-OQPIM45IJZVWRHISXV9D/JRE2.png",
       "author": "Joe Rogan",
       "category": "Comedy",
       "duration": "2h 30m",
@@ -27,6 +27,15 @@
           "releaseDate": "2023-07-16",
           "rating": 4.9,
           "reviews": 254
+        },
+        {
+          "id": 103,
+          "title": "Episode 3: Comedy Special with Dave Chappelle",
+          "description": "Joe Rogan and Dave Chappelle share hilarious stories and discuss the art of comedy.",
+          "duration": "2h 15m",
+          "releaseDate": "2023-07-18",
+          "rating": 4.7,
+          "reviews": 189
         }
       ]
     },
@@ -57,6 +66,15 @@
           "releaseDate": "2023-07-02",
           "rating": 4.7,
           "reviews": 98
+        },
+        {
+          "id": 203,
+          "title": "Season 3: The Cold Case",
+          "description": "Sarah Koenig revisits a cold case and uncovers new evidence that could change everything.",
+          "duration": "1h 30m",
+          "releaseDate": "2023-07-05",
+          "rating": 4.5,
+          "reviews": 132
         }
       ]
     },
@@ -78,15 +96,6 @@
           "releaseDate": "2023-07-01",
           "rating": 4.5,
           "reviews": 76
-        },
-        {
-          "id": 302,
-          "title": "Episode 2: The Truth About Climate Change",
-          "description": "Wendy Zukerman delves into the science of climate change and its impact on the planet.",
-          "duration": "50m",
-          "releaseDate": "2023-07-03",
-          "rating": 4.7,
-          "reviews": 88
         }
       ]
     },
@@ -117,6 +126,15 @@
           "releaseDate": "2023-06-26",
           "rating": 4.9,
           "reviews": 112
+        },
+        {
+          "id": 403,
+          "title": "Episode 3: Special Report - Climate Crisis",
+          "description": "The Daily investigates the global climate crisis and its impact on communities worldwide.",
+          "duration": "30m",
+          "releaseDate": "2023-06-28",
+          "rating": 4.7,
+          "reviews": 98
         }
       ]
     },
@@ -147,6 +165,15 @@
           "releaseDate": "2023-06-29",
           "rating": 4.7,
           "reviews": 72
+        },
+        {
+          "id": 503,
+          "title": "Episode 3: Freakonomics Q&A",
+          "description": "Stephen J. Dubner answers listener questions about economics, behavior, and more.",
+          "duration": "55m",
+          "releaseDate": "2023-06-30",
+          "rating": 4.8,
+          "reviews": 84
         }
       ]
     },
@@ -177,6 +204,15 @@
           "releaseDate": "2023-07-03",
           "rating": 4.8,
           "reviews": 64
+        },
+        {
+          "id": 603,
+          "title": "Episode 3: Space Exploration - Journey to Mars",
+          "description": "Radiolab takes listeners on a thrilling journey to explore the possibilities of human settlement on Mars.",
+          "duration": "1h 10m",
+          "releaseDate": "2023-07-05",
+          "rating": 4.9,
+          "reviews": 74
         }
       ]
     },
@@ -207,6 +243,15 @@
           "releaseDate": "2023-07-06",
           "rating": 4.9,
           "reviews": 94
+        },
+        {
+          "id": 703,
+          "title": "Episode 3: From Garage to Fortune 500",
+          "description": "Guy Raz explores the transformation of a small garage startup into a Fortune 500 company.",
+          "duration": "1h 20m",
+          "releaseDate": "2023-07-08",
+          "rating": 4.7,
+          "reviews": 88
         }
       ]
     },
@@ -237,6 +282,15 @@
           "releaseDate": "2023-07-11",
           "rating": 4.7,
           "reviews": 78
+        },
+        {
+          "id": 803,
+          "title": "Episode 3: The Secrets of Productivity",
+          "description": "Tim Ferriss shares productivity secrets from top performers in various fields.",
+          "duration": "1h 30m",
+          "releaseDate": "2023-07-13",
+          "rating": 4.8,
+          "reviews": 82
         }
       ]
     },
@@ -267,6 +321,15 @@
           "releaseDate": "2023-06-30",
           "rating": 4.8,
           "reviews": 82
+        },
+        {
+          "id": 903,
+          "title": "Episode 3: Behind the Lyrics - A Songwriter's Story",
+          "description": "Song Exploder dives deep into the songwriter's personal story behind a powerful song.",
+          "duration": "45m",
+          "releaseDate": "2023-07-01",
+          "rating": 4.6,
+          "reviews": 68
         }
       ]
     },
@@ -297,6 +360,15 @@
           "releaseDate": "2023-07-04",
           "rating": 4.6,
           "reviews": 98
+        },
+        {
+          "id": 1003,
+          "title": "Episode 3: Unraveling the Mystery of Chaos Theory",
+          "description": "Josh and Chuck explain the principles of chaos theory and its applications in various fields.",
+          "duration": "55m",
+          "releaseDate": "2023-07-06",
+          "rating": 4.8,
+          "reviews": 105
         }
       ]
     }
