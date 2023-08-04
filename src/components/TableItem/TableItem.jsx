@@ -4,8 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { setActualEpisode } from "../../redux/reducers/actualEpisodeSlice";
-import { useEffect, useState } from "react";
+import {
+  setActualEpisode,
+  setIsPlaying,
+} from "../../redux/reducers/actualEpisodeSlice";
 
 const StyledWrapper = styled.div`
   position: relative;
@@ -117,25 +119,22 @@ const StyledNameTitle = styled.p`
 `;
 
 export const TableItem = ({ item, isTitlesPodcast }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isPlayingPodcast, setIsPlayingPodcast] = useState(false);
-
-  const actualEpisode = useSelector((state) => state.actualEpisode);
-  const actualPodcastId = Math.floor(actualEpisode.id / 100);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const { isPlaying, data } = useSelector((state) => state.actualEpisode);
+
+  const sameId = data.id === item.id;
+  const samePodcastId = Math.floor(data.id / 100) === item.id;
+
   const changeActualEpisode = (episode) => () => {
     dispatch(setActualEpisode(episode));
+    dispatch(sameId ? setIsPlaying(!isPlaying) : setIsPlaying(true));
   };
+
   const goToPodcast = () => {
     navigate(`/podcast/${item.id}`);
   };
-
-  useEffect(() => {
-    setIsPlaying(actualEpisode.id === item.id);
-    setIsPlayingPodcast(actualPodcastId === item.id);
-  }, [actualEpisode, item.id, actualPodcastId]);
 
   return (
     <StyledWrapper>
@@ -146,7 +145,7 @@ export const TableItem = ({ item, isTitlesPodcast }) => {
       >
         {isTitlesPodcast ? (
           <>
-            <StyleItem>{isPlayingPodcast ? "⏸" : "⏯"}</StyleItem>
+            <StyleItem>{isPlaying && samePodcastId ? "⏸" : "⏯"}</StyleItem>
             <StyledContentName>
               <img src={item.imageUrl} alt={item.title} />
               <div>
@@ -159,7 +158,7 @@ export const TableItem = ({ item, isTitlesPodcast }) => {
           </>
         ) : (
           <>
-            <StyleItem>{isPlaying ? "⏸" : "⏯"}</StyleItem>
+            <StyleItem>{isPlaying && sameId ? "⏸" : "⏯"}</StyleItem>
             <StyledContentName>
               <img src={item.imageUrl} alt={item.title} />
               <div>

@@ -2,13 +2,22 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const actualEpisodeSlice = createSlice({
   name: "actualEpisode",
-  initialState: "",
+  initialState: {
+    data: "",
+    isPlaying: false,
+  },
   reducers: {
     setActualEpisode: (state, action) => {
-      return action.payload;
+      return {
+        ...state,
+        data: action.payload,
+      };
+    },
+    setIsPlaying: (state, action) => {
+      state.isPlaying = action.payload;
     },
   },
 });
 
-export const { setActualEpisode } = actualEpisodeSlice.actions;
+export const { setActualEpisode, setIsPlaying } = actualEpisodeSlice.actions;
 export default actualEpisodeSlice.reducer;
