@@ -12,6 +12,9 @@ const StyledWrapper = styled.form`
   align-items: center;
   margin: 0 0 100px 0;
   width: 100%;
+  background-color: #1a1a1a;
+  border: 2px solid transparent;
+  border-radius: 25px;
 `;
 
 const StyledInput = styled.input`
@@ -29,7 +32,7 @@ const StyledInput = styled.input`
     content: "";
     position: flex;
     left: 0;
-    padding-left: 10px;
+    padding-left: 20px;
   }
 
   &:focus {
@@ -41,6 +44,8 @@ const StyledRemoveButton = styled.input`
   position: absolute;
   right: 30px;
   border: none;
+  bottom: 2px;
+  top: 0;
   background-color: transparent;
   color: #ffffff;
   font-size: 20px;
@@ -53,6 +58,22 @@ const StyledRemoveButton = styled.input`
 
   &:focus {
     outline: none;
+  }
+`;
+
+const StyledButton = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+
+  box-icon {
+    width: 30px;
+    height: 30px;
+    fill: white;
+    border-radius: 50%;
+    z-index: 1;
   }
 `;
 
@@ -85,6 +106,9 @@ export const SearchBar = ({ originalPodcasts, setFilteredContent }) => {
 
   return (
     <StyledWrapper onSubmit={OnSearchPodcast}>
+      <StyledButton>
+        <box-icon name="search" />
+      </StyledButton>
       <StyledInput
         type="text"
         placeholder={t("searchBar.placeHolder")}

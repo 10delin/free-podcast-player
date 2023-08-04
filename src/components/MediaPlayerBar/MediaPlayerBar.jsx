@@ -58,6 +58,24 @@ const StyledFullName = styled.div`
   align-items: flex-start;
 `;
 
+const StyledButton = styled.div`
+  position: relative;
+
+  box-icon {
+    width: 40px;
+    height: 40px;
+    fill: white;
+    border-radius: 50%;
+    background-color: ${({ $isPlaying }) =>
+      $isPlaying ? "#4a52c0" : "transparent"};
+    cursor: pointer;
+
+    &:hover {
+      background-color: #4a52c0;
+    }
+  }
+`;
+
 export const MediaPlayerBar = () => {
   const { data, isPlaying } = useSelector((state) => state.actualEpisode);
   const dispatch = useDispatch();
@@ -83,7 +101,9 @@ export const MediaPlayerBar = () => {
             <StyledNameTitle>{data.title}</StyledNameTitle>
             <p>{getAuthor()}</p>
           </StyledFullName>
-          <button onClick={playEpisode}>{isPlaying ? "⏸" : "⏯"}</button>
+          <StyledButton $isPlaying={isPlaying} onClick={playEpisode}>
+            {isPlaying ? <box-icon name="pause" /> : <box-icon name="play" />}
+          </StyledButton>
         </StyledContentName>
       </StyledContent>
     </StyledWrapper>

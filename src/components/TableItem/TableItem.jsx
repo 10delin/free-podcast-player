@@ -125,6 +125,24 @@ const StyledNameTitle = styled.p`
       : null}
 `;
 
+const StyledButton = styled.div`
+  position: relative;
+
+  box-icon {
+    width: 30px;
+    height: 30px;
+    fill: white;
+    border-radius: 50%;
+    background-color: ${({ $isPlaying, $sameId }) =>
+      $isPlaying && $sameId ? "#4a52c0" : "transparent"};
+    cursor: pointer;
+
+    &:hover {
+      background-color: #4a52c0;
+    }
+  }
+`;
+
 export const TableItem = ({ item, isTitlesPodcast }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -152,7 +170,13 @@ export const TableItem = ({ item, isTitlesPodcast }) => {
       >
         {isTitlesPodcast ? (
           <>
-            <StyleItem>{isPlaying && samePodcastId ? "⏸" : "⏯"}</StyleItem>
+            <StyledButton $isPlaying={isPlaying} $sameId={samePodcastId}>
+              {isPlaying && samePodcastId ? (
+                <box-icon name="pause" />
+              ) : (
+                <box-icon name="play" />
+              )}
+            </StyledButton>
             <StyledContentName>
               <img src={item.imageUrl} alt={item.title} />
               <div>
@@ -167,7 +191,13 @@ export const TableItem = ({ item, isTitlesPodcast }) => {
           </>
         ) : (
           <>
-            <StyleItem>{isPlaying && sameId ? "⏸" : "⏯"}</StyleItem>
+            <StyledButton $isPlaying={isPlaying} $sameId={sameId}>
+              {isPlaying && sameId ? (
+                <box-icon name="pause" />
+              ) : (
+                <box-icon name="play" />
+              )}
+            </StyledButton>
             <StyledContentName>
               <img src={item.imageUrl} alt={item.title} />
               <div>

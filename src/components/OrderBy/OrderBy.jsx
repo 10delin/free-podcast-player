@@ -7,10 +7,12 @@ import styled from "styled-components";
 const StyledWrapper = styled.div`
   position: relative;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  justify-self: end;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 50px;
+  gap: 2px;
+  background-color: #1a1a1a;
+  border-radius: 25px;
 `;
 
 const StyledSelect = styled.select`
@@ -49,6 +51,22 @@ const StyledOption = styled.option`
 
   &:checked {
     background-color: #414141;
+  }
+`;
+
+const StyledButton = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+
+  box-icon {
+    width: 30px;
+    height: 30px;
+    fill: white;
+    border-radius: 50%;
+    z-index: 1;
   }
 `;
 
@@ -97,6 +115,9 @@ export const OrderBy = ({ originalPodcasts, setFilteredContent }) => {
 
   return (
     <StyledWrapper>
+      <StyledButton>
+        <box-icon name="search" />
+      </StyledButton>
       <StyledSelect
         value={orderBy}
         onChange={onOrderByPodcast}

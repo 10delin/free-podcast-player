@@ -47,7 +47,7 @@ const StyledBackButton = styled.button`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 13px 10px;
+  padding: 10px 10px;
   background-color: #1a1a1a;
   border: none;
   color: #fff;
@@ -55,6 +55,12 @@ const StyledBackButton = styled.button`
   &:hover {
     cursor: pointer;
     background-color: #383737;
+  }
+
+  box-icon {
+    width: 30px;
+    height: 30px;
+    fill: white;
   }
 `;
 
@@ -85,7 +91,7 @@ export const Podcast = () => {
       <StyledContent>
         <StyledBarContent>
           <StyledBackButton onClick={() => Navigate(`/`)} data-cy="go-to-home">
-            ⬅
+            <box-icon name="chevron-left" color="white" />
           </StyledBackButton>
           <SearchBar
             originalPodcasts={podcast.episodes}
