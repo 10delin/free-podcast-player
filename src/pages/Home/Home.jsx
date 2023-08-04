@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import PODCASTS from "../../data/mockPodcasts.json";
 import { TITLES_BAR_PODCAST } from "../../utils/model";
@@ -7,7 +8,6 @@ import styled from "styled-components";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { OrderBy } from "../../components/OrderBy/OrderBy";
 import { TableContent } from "../../components/TableContent/TableContent";
-import { useSelector } from "react-redux";
 
 const StyledWrapper = styled.div`
   display: flex;

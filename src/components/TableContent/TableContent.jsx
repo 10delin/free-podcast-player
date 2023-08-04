@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import EpisodeImage from "../../assets/images/episode-image.png";
-
 import { TableItem } from "../TableItem/TableItem";
 
 const StyledWrapper = styled.div`
@@ -50,21 +48,10 @@ const StyledTitleItem = styled.p`
   }
 `;
 
-const StyledEpisodeImage = styled.img`
-  position: relative;
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-bottom: 30px;
-`;
-
 export const TableContent = ({ content, titles }) => {
   const isTitlesPodcast = titles.length === 4;
   return (
     <StyledWrapper>
-      {!isTitlesPodcast ? (
-        <StyledEpisodeImage src={EpisodeImage} alt="picture" />
-      ) : null}
       <StyledTitles>
         {[...titles].map((title) => (
           <StyledTitleItem key={title} $isTitlesPodcast={isTitlesPodcast}>
@@ -86,4 +73,5 @@ export const TableContent = ({ content, titles }) => {
 TableContent.propTypes = {
   content: PropTypes.arrayOf(PropTypes.object).isRequired,
   titles: PropTypes.arrayOf(PropTypes.string).isRequired,
+  isTitlesPodcast: PropTypes.bool,
 };

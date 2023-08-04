@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import PODCASTS from "../../data/mockPodcasts.json";
 import { TITLES_BAR_EPISODES } from "../../utils/model";
 import { styled } from "styled-components";
+import EpisodeImage from "../../assets/images/episode-image.png";
 
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { OrderBy } from "../../components/OrderBy/OrderBy";
@@ -57,6 +58,14 @@ const StyledBackButton = styled.button`
   }
 `;
 
+const StyledEpisodeImage = styled.img`
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+`;
+
 export const Podcast = () => {
   const originalPodcasts = PODCASTS.podcasts;
   const [filteredEpisodes, setFilteredEpisodes] = useState([]);
@@ -83,7 +92,7 @@ export const Podcast = () => {
             setFilteredContent={setFilteredEpisodes}
           />
         </StyledBarContent>
-
+        <StyledEpisodeImage src={EpisodeImage} alt="picture" />
         <OrderBy
           originalPodcasts={podcast.episodes}
           setFilteredContent={setFilteredEpisodes}
