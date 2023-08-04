@@ -17,7 +17,7 @@ const StyledWrapper = styled.form`
 const StyledInput = styled.input`
   position: relative;
   border: none;
-  background-color: #2a2a2a;
+  background-color: #1a1a1a;
   color: #ffffff;
   border: 2px solid transparent;
   padding: 15px 10px;
