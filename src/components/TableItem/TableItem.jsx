@@ -116,6 +116,13 @@ const StyledNameTitle = styled.p`
   padding: 0;
   color: #ffffff;
   font-weight: 500;
+
+  ${({ $isPlaying, $sameId }) =>
+    $isPlaying && $sameId
+      ? `
+    color: #23a338;
+  `
+      : null}
 `;
 
 export const TableItem = ({ item, isTitlesPodcast }) => {
@@ -149,7 +156,9 @@ export const TableItem = ({ item, isTitlesPodcast }) => {
             <StyledContentName>
               <img src={item.imageUrl} alt={item.title} />
               <div>
-                <StyledNameTitle>{item.title}</StyledNameTitle>
+                <StyledNameTitle $isPlaying={isPlaying} $sameId={samePodcastId}>
+                  {item.title}
+                </StyledNameTitle>
                 <p>{item.author}</p>
               </div>
             </StyledContentName>
@@ -162,7 +171,9 @@ export const TableItem = ({ item, isTitlesPodcast }) => {
             <StyledContentName>
               <img src={item.imageUrl} alt={item.title} />
               <div>
-                <StyledNameTitle>{item.title}</StyledNameTitle>
+                <StyledNameTitle $isPlaying={isPlaying} $sameId={sameId}>
+                  {item.title}
+                </StyledNameTitle>
                 <p>{item.author}</p>
               </div>
             </StyledContentName>
