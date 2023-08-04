@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import PODCASTS from "../../data/mockPodcasts.json";
@@ -67,7 +67,7 @@ export const Podcast = () => {
 
   const podcast = [...originalPodcasts].find((podcast) => podcast?.id === id);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setFilteredEpisodes(podcast?.episodes);
   }, [podcast]);
 
