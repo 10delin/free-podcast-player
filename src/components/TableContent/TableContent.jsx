@@ -25,7 +25,6 @@ const StyledTitles = styled.div`
 
 const StyledTitleItem = styled.p`
   width: 20%;
-  padding: 10px;
   margin: 0;
   font-size: 13px;
   color: #808080;
@@ -35,11 +34,11 @@ const StyledTitleItem = styled.p`
   }
 
   &:nth-child(2) {
-    width: 20%;
+    width: 30%;
   }
 
   &:nth-child(3) {
-    width: 40%;
+    width: 30%;
   }
 
   &:nth-child(4) {
