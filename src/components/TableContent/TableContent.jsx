@@ -46,6 +46,12 @@ const StyledTitleItem = styled.p`
   &:nth-child(5) {
     width: 5%;
   }
+
+  box-icon {
+    fill: #808080;
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 export const TableContent = ({ content, titles }) => {
@@ -53,11 +59,16 @@ export const TableContent = ({ content, titles }) => {
   return (
     <StyledWrapper>
       <StyledTitles>
-        {[...titles].map((title) => (
-          <StyledTitleItem key={title} $isTitlesPodcast={isTitlesPodcast}>
-            {title}
-          </StyledTitleItem>
-        ))}
+        {[...titles].map(
+          (title) => (
+            console.log(title),
+            (
+              <StyledTitleItem key={title} $isTitlesPodcast={isTitlesPodcast}>
+                {title === "Duration" ? <box-icon name="time" /> : title}
+              </StyledTitleItem>
+            )
+          )
+        )}
       </StyledTitles>
       {[...content].map((item) => (
         <TableItem
