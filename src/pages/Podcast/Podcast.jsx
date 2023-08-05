@@ -9,7 +9,8 @@ import EpisodeImage from "../../assets/images/episode-image.png";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { OrderBy } from "../../components/OrderBy/OrderBy";
 import { TableContent } from "../../components/TableContent/TableContent";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsPlaying } from "../../redux/reducers/actualEpisodeSlice";
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -42,6 +43,15 @@ const StyledBarContent = styled.div`
   gap: 10px;
 `;
 
+const StyledWrapperTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 50px;
+`;
+
 const StyledBackButton = styled.button`
   display: flex;
   flex-direction: row;
@@ -69,7 +79,41 @@ const StyledEpisodeImage = styled.img`
   display: block;
   width: 100%;
   height: auto;
-  margin-bottom: 30px;
+`;
+
+const StyledTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-left: 100px;
+
+  box-icon {
+    width: 30px;
+    height: 30px;
+    fill: #2593e0;
+  }
+`;
+
+const StyledButton = styled.div`
+  position: relative;
+
+  box-icon {
+    width: 50px;
+    height: 50px;
+    fill: white;
+    border-radius: 50%;
+    background-color: ${({ $isPlaying }) =>
+      $isPlaying ? "#4a52c0" : "transparent"};
+    cursor: pointer;
+
+    &:hover {
+      background-color: #4a52c0;
+    }
+  }
 `;
 
 export const Podcast = () => {
@@ -77,10 +121,24 @@ export const Podcast = () => {
   const [filteredEpisodes, setFilteredEpisodes] = useState([]);
   const actualEpisode = useSelector((state) => state.actualEpisode);
 
+  const { isPlaying } = useSelector((state) => state.actualEpisode);
+  const dispatch = useDispatch();
+
+  const playEpisode = () => {
+    dispatch(setIsPlaying(!isPlaying));
+  };
+
   const id = parseInt(useParams().id);
   const Navigate = useNavigate();
 
   const podcast = [...originalPodcasts].find((podcast) => podcast?.id === id);
+
+  const getPodcastTitle = () => {
+    const title = PODCASTS?.podcasts?.find(
+      (podcasts) => podcasts.id === podcast.id
+    );
+    return title?.title;
+  };
 
   useLayoutEffect(() => {
     setFilteredEpisodes(podcast?.episodes);
@@ -99,10 +157,19 @@ export const Podcast = () => {
           />
         </StyledBarContent>
         <StyledEpisodeImage src={EpisodeImage} alt="picture" />
-        <OrderBy
-          originalPodcasts={podcast.episodes}
-          setFilteredContent={setFilteredEpisodes}
-        />
+        <StyledWrapperTitle>
+          <StyledButton $isPlaying={isPlaying} onClick={playEpisode}>
+            {isPlaying ? <box-icon name="pause" /> : <box-icon name="play" />}
+          </StyledButton>
+          <StyledTitle>
+            <h2>{getPodcastTitle()}</h2>
+            <box-icon type="solid" name="badge-check" />
+          </StyledTitle>
+          <OrderBy
+            originalPodcasts={podcast.episodes}
+            setFilteredContent={setFilteredEpisodes}
+          />
+        </StyledWrapperTitle>
         <TableContent content={filteredEpisodes} titles={TITLES_BAR_EPISODES} />
       </StyledContent>
     </StyledWrapper>

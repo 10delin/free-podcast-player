@@ -5,7 +5,7 @@ import translation_es from "./locales/es-ES/translation.json";
 
 i18next.init({
   interpolation: { escapeValue: false },
-  lng: "es",
+  lng: "en",
   resources: {
     en: {
       translation: translation_en,
