@@ -8,6 +8,8 @@ import {
   setActualEpisode,
   setIsPlaying,
 } from "../../redux/reducers/actualEpisodeSlice";
+import { Spinner } from "../Spinner/Spinner";
+import { useState } from "react";
 
 const StyledWrapper = styled.div`
   position: relative;
@@ -143,9 +145,17 @@ const StyledButton = styled.div`
   }
 `;
 
+const JAJAStyled = styled.div`
+  display: ${({ $isLoaded }) => ($isLoaded ? "flex" : "none")};
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
 export const TableItem = ({ item, isTitlesPodcast }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const { isPlaying, data } = useSelector((state) => state.actualEpisode);
 
@@ -161,59 +171,89 @@ export const TableItem = ({ item, isTitlesPodcast }) => {
     navigate(`/podcast/${item.id}`);
   };
 
+  const handleImageLoad = () => {
+    setIsLoaded(true);
+  };
+
   return (
-    <StyledWrapper>
-      <StylesWrapperPodcast
-        key={item.id}
-        onClick={isTitlesPodcast ? goToPodcast : changeActualEpisode(item)}
-        data-cy={isTitlesPodcast ? "go-to-podcast" : "change-actual-podcast"}
-      >
-        {isTitlesPodcast ? (
-          <>
-            <StyledButton $isPlaying={isPlaying} $sameId={samePodcastId}>
-              {isPlaying && samePodcastId ? (
-                <box-icon name="pause" />
-              ) : (
-                <box-icon name="play" />
-              )}
-            </StyledButton>
-            <StyledContentName>
-              <img src={item.imageUrl} alt={item.title} />
-              <div>
-                <StyledNameTitle $isPlaying={isPlaying} $sameId={samePodcastId}>
-                  {item.title}
-                </StyledNameTitle>
-                <p>{item.author}</p>
+    <>
+      <StyledWrapper>
+        <StylesWrapperPodcast
+          key={item.id}
+          onClick={isTitlesPodcast ? goToPodcast : changeActualEpisode(item)}
+          data-cy={isTitlesPodcast ? "go-to-podcast" : "change-actual-podcast"}
+        >
+          {isTitlesPodcast ? (
+            <>
+              <StyledButton $isPlaying={isPlaying} $sameId={samePodcastId}>
+                {isPlaying && samePodcastId ? (
+                  <box-icon name="pause" />
+                ) : (
+                  <box-icon name="play" />
+                )}
+              </StyledButton>
+              <StyledContentName>
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  onLoad={handleImageLoad}
+                />
+                <div>
+                  <StyledNameTitle
+                    $isPlaying={isPlaying}
+                    $sameId={samePodcastId}
+                  >
+                    {item.title}
+                  </StyledNameTitle>
+                  <p>{item.author}</p>
+                </div>
+              </StyledContentName>
+              <StyleItem>{item.description}</StyleItem>
+              <StyleItem>{item.releaseDate}</StyleItem>
+            </>
+          ) : (
+            <>
+              <div
+                style={{
+                  display: isLoaded ? "none" : "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "100%",
+                  height: "80px",
+                }}
+              >
+                <Spinner />
               </div>
-            </StyledContentName>
-            <StyleItem>{item.description}</StyleItem>
-            <StyleItem>{item.releaseDate}</StyleItem>
-          </>
-        ) : (
-          <>
-            <StyledButton $isPlaying={isPlaying} $sameId={sameId}>
-              {isPlaying && sameId ? (
-                <box-icon name="pause" />
-              ) : (
-                <box-icon name="play" />
-              )}
-            </StyledButton>
-            <StyledContentName>
-              <img src={item.imageUrl} alt={item.title} />
-              <div>
-                <StyledNameTitle $isPlaying={isPlaying} $sameId={sameId}>
-                  {item.title}
-                </StyledNameTitle>
-                <p>{item.author}</p>
-              </div>
-            </StyledContentName>
-            <StyleItem>{item.description}</StyleItem>
-            <StyleItem>{item.releaseDate}</StyleItem>
-            <StyleItem>{item.duration}</StyleItem>
-          </>
-        )}
-      </StylesWrapperPodcast>
-    </StyledWrapper>
+              <JAJAStyled $isLoaded={isLoaded}>
+                <StyledButton $isPlaying={isPlaying} $sameId={sameId}>
+                  {isPlaying && sameId ? (
+                    <box-icon name="pause" />
+                  ) : (
+                    <box-icon name="play" />
+                  )}
+                </StyledButton>
+                <StyledContentName>
+                  <img
+                    src={item.imageUrl}
+                    alt={item.title}
+                    onLoad={handleImageLoad}
+                  />
+                  <div>
+                    <StyledNameTitle $isPlaying={isPlaying} $sameId={sameId}>
+                      {item.title}
+                    </StyledNameTitle>
+                    <p>{item.author}</p>
+                  </div>
+                </StyledContentName>
+                <StyleItem>{item.description}</StyleItem>
+                <StyleItem>{item.releaseDate}</StyleItem>
+                <StyleItem>{item.duration}</StyleItem>
+              </JAJAStyled>
+            </>
+          )}
+        </StylesWrapperPodcast>
+      </StyledWrapper>
+    </>
   );
 };
 
