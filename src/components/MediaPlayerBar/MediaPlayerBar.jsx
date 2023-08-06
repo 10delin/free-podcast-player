@@ -1,8 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { setIsPlaying } from "../../redux/reducers/actualEpisodeSlice";
 
 import PODCASTS from "../../data/mockPodcasts.json";
+import { MediaPlayerButtons } from "../MediaPlayerButtons/MediaPlayerButtons";
 
 const StyledWrapper = styled.div`
   position: fixed;
@@ -13,7 +13,7 @@ const StyledWrapper = styled.div`
   background-color: #1a1a1a;
   color: #fff;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -58,27 +58,8 @@ const StyledFullName = styled.div`
   align-items: flex-start;
 `;
 
-const StyledButton = styled.div`
-  position: relative;
-
-  box-icon {
-    width: 40px;
-    height: 40px;
-    fill: white;
-    border-radius: 50%;
-    background-color: ${({ $isPlaying }) =>
-      $isPlaying ? "#4a52c0" : "transparent"};
-    cursor: pointer;
-
-    &:hover {
-      background-color: #4a52c0;
-    }
-  }
-`;
-
 export const MediaPlayerBar = () => {
-  const { data, isPlaying } = useSelector((state) => state.actualEpisode);
-  const dispatch = useDispatch();
+  const { data } = useSelector((state) => state.actualEpisode);
   const podcastId = Math.floor(data.id / 100);
 
   const getAuthor = () => {
@@ -86,10 +67,6 @@ export const MediaPlayerBar = () => {
       (podcast) => podcast.id === podcastId
     );
     return author?.author;
-  };
-
-  const playEpisode = () => {
-    dispatch(setIsPlaying(!isPlaying));
   };
 
   return data ? (
@@ -101,11 +78,9 @@ export const MediaPlayerBar = () => {
             <StyledNameTitle>{data.title}</StyledNameTitle>
             <p>{getAuthor()}</p>
           </StyledFullName>
-          <StyledButton $isPlaying={isPlaying} onClick={playEpisode}>
-            {isPlaying ? <box-icon name="pause" /> : <box-icon name="play" />}
-          </StyledButton>
         </StyledContentName>
       </StyledContent>
+      <MediaPlayerButtons />
     </StyledWrapper>
   ) : null;
 };

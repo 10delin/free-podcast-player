@@ -10,6 +10,7 @@ import {
 } from "../../redux/reducers/actualEpisodeSlice";
 import { Spinner } from "../Spinner/Spinner";
 import { useState } from "react";
+import { PlayItemButton } from "../PlayButtons/PlayButtons";
 
 const StyledWrapper = styled.div`
   position: relative;
@@ -127,24 +128,6 @@ const StyledNameTitle = styled.p`
       : null}
 `;
 
-const StyledButton = styled.div`
-  position: relative;
-
-  box-icon {
-    width: 30px;
-    height: 30px;
-    fill: white;
-    border-radius: 50%;
-    background-color: ${({ $isPlaying, $sameId }) =>
-      $isPlaying && $sameId ? "#4a52c0" : "transparent"};
-    cursor: pointer;
-
-    &:hover {
-      background-color: #4a52c0;
-    }
-  }
-`;
-
 const JAJAStyled = styled.div`
   display: ${({ $isLoaded }) => ($isLoaded ? "flex" : "none")};
   justify-content: space-between;
@@ -185,13 +168,7 @@ export const TableItem = ({ item, isTitlesPodcast }) => {
         >
           {isTitlesPodcast ? (
             <>
-              <StyledButton $isPlaying={isPlaying} $sameId={samePodcastId}>
-                {isPlaying && samePodcastId ? (
-                  <box-icon name="pause" />
-                ) : (
-                  <box-icon name="play" />
-                )}
-              </StyledButton>
+              <PlayItemButton sameId={samePodcastId} isPlaying={isPlaying} />
               <StyledContentName>
                 <img
                   src={item.imageUrl}
@@ -225,13 +202,7 @@ export const TableItem = ({ item, isTitlesPodcast }) => {
                 <Spinner />
               </div>
               <JAJAStyled $isLoaded={isLoaded}>
-                <StyledButton $isPlaying={isPlaying} $sameId={sameId}>
-                  {isPlaying && sameId ? (
-                    <box-icon name="pause" />
-                  ) : (
-                    <box-icon name="play" />
-                  )}
-                </StyledButton>
+                <PlayItemButton sameId={sameId} isPlaying={isPlaying} />
                 <StyledContentName>
                   <img
                     src={item.imageUrl}
