@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-import PODCASTS from "../../data/mockPodcasts.json";
 import { TITLES_BAR_PODCAST } from "../../utils/model";
 import styled from "styled-components";
 
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { OrderBy } from "../../components/OrderBy/OrderBy";
 import { TableContent } from "../../components/TableContent/TableContent";
+import { usePodcasts } from "../../hooks/usePodcasts";
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -33,23 +33,32 @@ const StyledContent = styled.div`
 `;
 
 export const Home = () => {
-  const originalPodcasts = PODCASTS.podcasts;
-  const [filteredPodcasts, setFilteredPodcasts] = useState(originalPodcasts);
+  const { podcasts, loading } = usePodcasts();
+  const [filteredPodcasts, setFilteredPodcasts] = useState([]);
   const actualEpisode = useSelector((state) => state.actualEpisode);
 
+  useEffect(() => {
+    setFilteredPodcasts(podcasts);
+  }, [podcasts]);
+
   return (
-    <StyledWrapper $actualEpisode={actualEpisode}>
-      <StyledContent>
-        <SearchBar
-          originalPodcasts={originalPodcasts}
-          setFilteredContent={setFilteredPodcasts}
-        />
-        <OrderBy
-          originalPodcasts={originalPodcasts}
-          setFilteredContent={setFilteredPodcasts}
-        />
-        <TableContent content={filteredPodcasts} titles={TITLES_BAR_PODCAST} />
-      </StyledContent>
-    </StyledWrapper>
+    !loading && (
+      <StyledWrapper $actualEpisode={actualEpisode}>
+        <StyledContent>
+          <SearchBar
+            originalPodcasts={podcasts}
+            setFilteredContent={setFilteredPodcasts}
+          />
+          <OrderBy
+            originalPodcasts={podcasts}
+            setFilteredContent={setFilteredPodcasts}
+          />
+          <TableContent
+            content={filteredPodcasts}
+            titles={TITLES_BAR_PODCAST}
+          />
+        </StyledContent>
+      </StyledWrapper>
+    )
   );
 };

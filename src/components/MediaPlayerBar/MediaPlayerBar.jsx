@@ -1,8 +1,7 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-import PODCASTS from "../../data/mockPodcasts.json";
-
+import { usePodcasts } from "../../hooks/usePodcasts";
 import { MediaPlayerButtons } from "../MediaPlayerButtons/MediaPlayerButtons";
 import { PlaybackBar } from "../PlaybackBar/PlaybackBar";
 import { VolumePlayer } from "../VolumePlayer/VolumePlayer";
@@ -23,12 +22,13 @@ const StyledWrapper = styled.div`
 `;
 
 export const MediaPlayerBar = () => {
+  const { podcasts } = usePodcasts();
   const { data, isPlaying } = useSelector((state) => state.actualEpisode);
 
   return data ? (
     <StyledWrapper data-cy="media-player-bar">
       <CurrentEpisode data={data} />
-      <MediaPlayerButtons podcast={PODCASTS.podcasts} />
+      <MediaPlayerButtons podcast={podcasts} />
       <PlaybackBar currentTrack={data} isPlaying={isPlaying} />
       <VolumePlayer />
     </StyledWrapper>

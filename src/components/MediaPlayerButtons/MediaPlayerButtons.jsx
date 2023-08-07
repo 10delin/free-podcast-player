@@ -60,7 +60,7 @@ export const MediaPlayerButtons = ({ podcast }) => {
   const currentEpisodeId = useSelector((state) => state.actualEpisode.data.id);
   const currentPodcastId = parseInt(currentEpisodeId.toString()[0]);
 
-  const currentPodcast = podcast.find(
+  const currentPodcast = podcast?.find(
     (podcast) => podcast.id === currentPodcastId
   );
 

@@ -46,13 +46,13 @@ export const TableContent = ({ content, titles }) => {
   return (
     <StyledWrapper data-cy="table-content">
       <StyledTitles>
-        {[...titles].map((title) => (
+        {[...titles]?.map((title) => (
           <StyledTitleItem key={title} $isTitlesPodcast={isTitlesPodcast}>
             {title === "Duration" ? <box-icon name="time" /> : title}
           </StyledTitleItem>
         ))}
       </StyledTitles>
-      {[...content].map((item) => (
+      {[...content]?.map((item) => (
         <TableItem
           key={item.id}
           item={item}
