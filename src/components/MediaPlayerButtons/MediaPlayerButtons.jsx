@@ -1,6 +1,13 @@
 import { styled } from "styled-components";
+import PropTypes from "prop-types";
 
 import { PlayMediaButton } from "../PlayButtons/PlayButtons";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  resetIsPlaying,
+  setActualEpisode,
+  setIsPlaying,
+} from "../../redux/reducers/actualEpisodeSlice";
 
 const StyledWrapper = styled.div`
   height: 110px;
@@ -48,7 +55,43 @@ const CustomBoxIcon = styled.div`
   }
 `;
 
-export const MediaPlayerButtons = () => {
+export const MediaPlayerButtons = ({ podcast }) => {
+  const dispatch = useDispatch();
+  const currentEpisodeId = useSelector((state) => state.actualEpisode.data.id);
+  const currentPodcastId = parseInt(currentEpisodeId.toString()[0]);
+
+  const currentPodcast = podcast.find(
+    (podcast) => podcast.id === currentPodcastId
+  );
+
+  const handlePrevious = () => {
+    const currentIndex = currentPodcast.episodes.findIndex(
+      (episode) => episode.id === currentEpisodeId
+    );
+    if (currentIndex > 0) {
+      const previousEpisode = currentPodcast.episodes[currentIndex - 1];
+      dispatch(resetIsPlaying());
+      setTimeout(() => {
+        dispatch(setActualEpisode(previousEpisode));
+        dispatch(setIsPlaying(true));
+      }, 100);
+    }
+  };
+
+  const handleNext = () => {
+    const currentIndex = currentPodcast.episodes.findIndex(
+      (episode) => episode.id === currentEpisodeId
+    );
+    if (currentIndex < currentPodcast.episodes.length - 1) {
+      const nextEpisode = currentPodcast.episodes[currentIndex + 1];
+      dispatch(resetIsPlaying());
+      setTimeout(() => {
+        dispatch(setActualEpisode(nextEpisode));
+        dispatch(setIsPlaying(true));
+      }, 100);
+    }
+  };
+
   return (
     <StyledWrapper>
       <StyledContent>
@@ -56,11 +99,11 @@ export const MediaPlayerButtons = () => {
           <CustomBoxIcon name="shuffle">
             <box-icon name="shuffle" />
           </CustomBoxIcon>
-          <CustomBoxIcon name="skip-previous">
+          <CustomBoxIcon name="skip-previous" onClick={handlePrevious}>
             <box-icon name="skip-previous" />
           </CustomBoxIcon>
           <PlayMediaButton />
-          <CustomBoxIcon name="skip-next">
+          <CustomBoxIcon name="skip-next" onClick={handleNext}>
             <box-icon name="skip-next" />
           </CustomBoxIcon>
           <CustomBoxIcon name="repeat">
@@ -70,4 +113,8 @@ export const MediaPlayerButtons = () => {
       </StyledContent>
     </StyledWrapper>
   );
+};
+
+MediaPlayerButtons.propTypes = {
+  podcast: PropTypes.array.isRequired,
 };
