@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import PODCASTS from "../../data/mockPodcasts.json";
 import { MediaPlayerButtons } from "../MediaPlayerButtons/MediaPlayerButtons";
+import { PlaybackBar } from "../PlaybackBar/PlaybackBar";
+import { VolumePlayer } from "../VolumePlayer/VolumePlayer";
 
 const StyledWrapper = styled.div`
   position: fixed;
@@ -15,6 +17,7 @@ const StyledWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 50px;
 `;
 
 const StyledContent = styled.div`
@@ -24,6 +27,7 @@ const StyledContent = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
+  width: 25%;
 `;
 
 const StyledContentName = styled.div`
@@ -59,7 +63,7 @@ const StyledFullName = styled.div`
 `;
 
 export const MediaPlayerBar = () => {
-  const { data } = useSelector((state) => state.actualEpisode);
+  const { data, isPlaying } = useSelector((state) => state.actualEpisode);
   const podcastId = Math.floor(data.id / 100);
 
   const getAuthor = () => {
@@ -81,6 +85,8 @@ export const MediaPlayerBar = () => {
         </StyledContentName>
       </StyledContent>
       <MediaPlayerButtons />
+      <PlaybackBar currentTrack={data} isPlaying={isPlaying} />
+      <VolumePlayer />
     </StyledWrapper>
   ) : null;
 };
