@@ -1,0 +1,404 @@
+{
+  "podcasts": [
+    {
+      "id": 1,
+      "title": "The Joe Rogan Experience",
+      "description": "The Joe Rogan Experience is a long-form podcast where Joe Rogan has conversations with guests about various topics.",
+      "imageUrl": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts122/v4/e0/73/74/e07374ec-a986-feed-027c-5af718895a31/mza_4297001239469570007.jpg/600x600bb.jpg",
+      "author": "Joe Rogan",
+      "category": "Comedy",
+      "duration": "2h 30m",
+      "releaseDate": "2023-07-15",
+      "episodes": [
+        {
+          "id": 101,
+          "title": "Introduction to The Joe Rogan Experience",
+          "description": "In this first episode, Joe Rogan introduces his new podcast and talks about what to expect in future episodes.",
+          "duration": "10m",
+          "releaseDate": "2023-07-15",
+          "rating": 4.8,
+          "reviews": 102,
+          "imageUrl": "https://picsum.photos/600/600/?random=101"
+        },
+        {
+          "id": 102,
+          "title": "Joe Rogan and Elon Musk",
+          "description": "Joe Rogan sits down with Elon Musk to discuss technology, space exploration, and the future of humanity.",
+          "duration": "3h",
+          "releaseDate": "2023-07-16",
+          "rating": 4.9,
+          "reviews": 254,
+          "imageUrl": "https://picsum.photos/600/600/?random=102"
+        },
+        {
+          "id": 103,
+          "title": "Comedy Special with Dave Chappelle",
+          "description": "Joe Rogan and Dave Chappelle share hilarious stories and discuss the art of comedy.",
+          "duration": "2h 15m",
+          "releaseDate": "2023-07-18",
+          "rating": 4.7,
+          "reviews": 189,
+          "imageUrl": "https://picsum.photos/600/600/?random=103"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Serial",
+      "description": "Serial is a podcast that tells one true story over the course of a season.",
+      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/75/76/ae/7576aea3-1f09-4696-2453-00012596b246/mza_4806457007649747151.jpg/600x600bb.jpg",
+      "author": "Sarah Koenig",
+      "category": "True Crime",
+      "duration": "1h",
+      "releaseDate": "2023-06-30",
+      "episodes": [
+        {
+          "id": 201,
+          "title": "The Murder Case",
+          "description": "In the first season of Serial, Sarah Koenig investigates a complex murder case and uncovers surprising details.",
+          "duration": "1h",
+          "releaseDate": "2023-06-30",
+          "rating": 4.6,
+          "reviews": 124,
+          "imageUrl": "https://picsum.photos/600/600/?random=104"
+        },
+        {
+          "id": 202,
+          "title": "The Missing Person",
+          "description": "In the second season, Sarah Koenig delves into the mysterious disappearance of a young person.",
+          "duration": "1h",
+          "releaseDate": "2023-07-02",
+          "rating": 4.7,
+          "reviews": 98,
+          "imageUrl": "https://picsum.photos/600/600/?random=105"
+        },
+        {
+          "id": 203,
+          "title": "The Cold Case",
+          "description": "Sarah Koenig revisits a cold case and uncovers new evidence that could change everything.",
+          "duration": "1h 30m",
+          "releaseDate": "2023-07-05",
+          "rating": 4.5,
+          "reviews": 132,
+          "imageUrl": "https://picsum.photos/600/600/?random=106"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Science Vs",
+      "description": "Science Vs is the show that pits facts against popular myths and misconceptions.",
+      "imageUrl": "https://is3-ssl.mzstatic.com/image/thumb/Podcasts126/v4/f2/f4/41/f2f44114-bc8b-fe80-1b70-58757ed47edf/mza_14282481236720983925.jpg/600x600bb.jpg",
+      "author": "Wendy Zukerman",
+      "category": "Science",
+      "duration": "45m",
+      "releaseDate": "2023-07-01",
+      "episodes": [
+        {
+          "id": 301,
+          "title": "Debunking Common Health Myths",
+          "description": "In this episode, Wendy Zukerman takes on common health myths and separates fact from fiction.",
+          "duration": "40m",
+          "releaseDate": "2023-07-01",
+          "rating": 4.5,
+          "reviews": 76,
+          "imageUrl": "https://picsum.photos/600/600/?random=107"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "The Daily",
+      "description": "This is how the news should sound. Twenty minutes a day, five days a week.",
+      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/1c/ac/04/1cac0421-4483-ff09-4f80-19710d9feda4/mza_12421371692158516891.jpeg/600x600bb.jpg",
+      "author": "The New York Times",
+      "category": "News",
+      "duration": "20m",
+      "releaseDate": "2023-06-25",
+      "episodes": [
+        {
+          "id": 401,
+          "title": "Headlines for the Day",
+          "description": "In this episode, The Daily presents the top headlines and news stories from around the world.",
+          "duration": "20m",
+          "releaseDate": "2023-06-25",
+          "rating": 4.8,
+          "reviews": 87,
+          "imageUrl": "https://picsum.photos/600/600/?random=108"
+        },
+        {
+          "id": 402,
+          "title": "In-Depth Analysis of Current Affairs",
+          "description": "The New York Times provides in-depth analysis and reporting on major current affairs.",
+          "duration": "25m",
+          "releaseDate": "2023-06-26",
+          "rating": 4.9,
+          "reviews": 112,
+          "imageUrl": "https://picsum.photos/600/600/?random=109"
+        },
+        {
+          "id": 403,
+          "title": "Special Report - Climate Crisis",
+          "description": "The Daily investigates the global climate crisis and its impact on communities worldwide.",
+          "duration": "30m",
+          "releaseDate": "2023-06-28",
+          "rating": 4.7,
+          "reviews": 98,
+          "imageUrl": "https://picsum.photos/600/600/?random=110"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Freakonomics Radio",
+      "description": "Discover the hidden side of everything with Stephen J. Dubner, co-author of the Freakonomics books.",
+      "imageUrl": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts115/v4/f7/0c/c5/f70cc540-ce36-d96f-b111-c970aad5505c/mza_17703422762227531425.jpg/600x600bb.jpg",
+      "author": "Stephen J. Dubner",
+      "category": "Education",
+      "duration": "50m",
+      "releaseDate": "2023-06-28",
+      "episodes": [
+        {
+          "id": 501,
+          "title": "Unconventional Economics",
+          "description": "Stephen J. Dubner explores unconventional economic ideas and their implications.",
+          "duration": "45m",
+          "releaseDate": "2023-06-28",
+          "rating": 4.6,
+          "reviews": 66,
+          "imageUrl": "https://picsum.photos/600/600/?random=111"
+        },
+        {
+          "id": 502,
+          "title": "The Power of Incentives",
+          "description": "The podcast discusses how incentives drive human behavior and shape various outcomes.",
+          "duration": "50m",
+          "releaseDate": "2023-06-29",
+          "rating": 4.7,
+          "reviews": 72,
+          "imageUrl": "https://picsum.photos/600/600/?random=112"
+        },
+        {
+          "id": 503,
+          "title": "Freakonomics Q&A",
+          "description": "Stephen J. Dubner answers listener questions about economics, behavior, and more.",
+          "duration": "55m",
+          "releaseDate": "2023-06-30",
+          "rating": 4.8,
+          "reviews": 84,
+          "imageUrl": "https://picsum.photos/600/600/?random=113"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Radiolab",
+      "description": "Radiolab is a show about curiosity. Where sound illuminates ideas, and the boundaries blur between science, philosophy, and human experience.",
+      "imageUrl": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts122/v4/83/24/26/832426a1-e383-8be2-cb9f-f430d8f49bff/mza_5127848265778442696.png/600x600bb.jpg",
+      "author": "Jad Abumrad and Robert Krulwich",
+      "category": "Science",
+      "duration": "1h",
+      "releaseDate": "2023-07-02",
+      "episodes": [
+        {
+          "id": 601,
+          "title": "Exploring the Nature of Reality",
+          "description": "Radiolab explores the concept of reality and how our perceptions shape our understanding.",
+          "duration": "55m",
+          "releaseDate": "2023-07-02",
+          "rating": 4.7,
+          "reviews": 58,
+          "imageUrl": "https://picsum.photos/600/600/?random=114"
+        },
+        {
+          "id": 602,
+          "title": "The Human Mind and Consciousness",
+          "description": "The podcast delves into the mysteries of the human mind and the nature of consciousness.",
+          "duration": "1h",
+          "releaseDate": "2023-07-03",
+          "rating": 4.8,
+          "reviews": 64,
+          "imageUrl": "https://picsum.photos/600/600/?random=115"
+        },
+        {
+          "id": 603,
+          "title": "Space Exploration - Journey to Mars",
+          "description": "Radiolab takes listeners on a thrilling journey to explore the possibilities of human settlement on Mars.",
+          "duration": "1h 10m",
+          "releaseDate": "2023-07-05",
+          "rating": 4.9,
+          "reviews": 74,
+          "imageUrl": "https://picsum.photos/600/600/?random=116"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "How I Built This",
+      "description": "Guy Raz dives into the stories behind some of the world's best-known companies.",
+      "imageUrl": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts116/v4/6f/f3/9a/6ff39a32-30fd-74a3-865b-b32a406b2cf7/mza_10042601693270015614.jpeg/600x600bb.jpg",
+      "author": "Guy Raz",
+      "category": "Business",
+      "duration": "1h 15m",
+      "releaseDate": "2023-07-05",
+      "episodes": [
+        {
+          "id": 701,
+          "title": "The Success Story of a Tech Startup",
+          "description": "Guy Raz interviews the founders of a successful tech startup and explores their journey.",
+          "duration": "1h",
+          "releaseDate": "2023-07-05",
+          "rating": 4.8,
+          "reviews": 82,
+          "imageUrl": "https://picsum.photos/600/600/?random=117"
+        },
+        {
+          "id": 702,
+          "title": "Building a Global Brand from Scratch",
+          "description": "The podcast features the story of an entrepreneur who built a global brand from scratch.",
+          "duration": "1h 10m",
+          "releaseDate": "2023-07-06",
+          "rating": 4.9,
+          "reviews": 94,
+          "imageUrl": "https://picsum.photos/600/600/?random=118"
+        },
+        {
+          "id": 703,
+          "title": "From Garage to Fortune 500",
+          "description": "Guy Raz explores the transformation of a small garage startup into a Fortune 500 company.",
+          "duration": "1h 20m",
+          "releaseDate": "2023-07-08",
+          "rating": 4.7,
+          "reviews": 88,
+          "imageUrl": "https://picsum.photos/600/600/?random=119"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "The Tim Ferriss Show",
+      "description": "Tim Ferriss deconstructs world-class performers from eclectic areas (investing, sports, business, art, etc.) to extract the tactics, tools, and routines you can use.",
+      "imageUrl": "https://is2-ssl.mzstatic.com/image/thumb/Podcasts125/v4/1e/6c/a3/1e6ca389-8db6-f7e0-7883-1f84d446fb03/mza_1352041245047545601.jpeg/600x600bb.jpg",
+      "author": "Tim Ferriss",
+      "category": "Self-Improvement",
+      "duration": "1h 30m",
+      "releaseDate": "2023-07-10",
+      "episodes": [
+        {
+          "id": 801,
+          "title": "The Habits of High Performers",
+          "description": "Tim Ferriss talks to high achievers about their habits and routines for success.",
+          "duration": "1h 20m",
+          "releaseDate": "2023-07-10",
+          "rating": 4.6,
+          "reviews": 69,
+          "imageUrl": "https://picsum.photos/600/600/?random=120"
+        },
+        {
+          "id": 802,
+          "title": "The Mindset for Overcoming Challenges",
+          "description": "The podcast explores the mindset required to overcome challenges and achieve goals.",
+          "duration": "1h 35m",
+          "releaseDate": "2023-07-11",
+          "rating": 4.7,
+          "reviews": 78,
+          "imageUrl": "https://picsum.photos/600/600/?random=121"
+        },
+        {
+          "id": 803,
+          "title": "The Secrets of Productivity",
+          "description": "Tim Ferriss shares productivity secrets from top performers in various fields.",
+          "duration": "1h 30m",
+          "releaseDate": "2023-07-13",
+          "rating": 4.8,
+          "reviews": 82,
+          "imageUrl": "https://picsum.photos/600/600/?random=122"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Song Exploder",
+      "description": "Song Exploder is a podcast where musicians take apart their songs and piece by piece, tell the story of how they were made.",
+      "imageUrl": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts116/v4/30/1c/1f/301c1f05-639c-bb22-cfdd-4c71aca5761e/mza_3479668065976336868.png/600x600bb.jpg",
+      "author": "Hrishikesh Hirway",
+      "category": "Music",
+      "duration": "40m",
+      "releaseDate": "2023-06-29",
+      "episodes": [
+        {
+          "id": 901,
+          "title": "The Making of a Chart-Topping Hit",
+          "description": "Song Exploder goes behind the scenes of a chart-topping hit and reveals its creation process.",
+          "duration": "35m",
+          "releaseDate": "2023-06-29",
+          "rating": 4.7,
+          "reviews": 74,
+          "imageUrl": "https://picsum.photos/600/600/?random=123"
+        },
+        {
+          "id": 902,
+          "title": "The Evolution of a Musical Idea",
+          "description": "The podcast traces the evolution of a musical idea from inception to final production.",
+          "duration": "40m",
+          "releaseDate": "2023-06-30",
+          "rating": 4.8,
+          "reviews": 82,
+          "imageUrl": "https://picsum.photos/600/600/?random=124"
+        },
+        {
+          "id": 903,
+          "title": "Behind the Lyrics - A Songwriter's Story",
+          "description": "Song Exploder dives deep into the songwriter's personal story behind a powerful song.",
+          "duration": "45m",
+          "releaseDate": "2023-07-01",
+          "rating": 4.6,
+          "reviews": 68,
+          "imageUrl": "https://picsum.photos/600/600/?random=125"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Stuff You Should Know",
+      "description": "If you've ever wanted to know about champagne, satanism, the Stonewall Uprising, chaos theory, LSD, El Nino, true crime, and Rosa Parks, then Josh and Chuck have you covered.",
+      "imageUrl": "https://is2-ssl.mzstatic.com/image/thumb/Podcasts126/v4/86/fa/05/86fa05e8-39e8-6cef-8ba9-ed1fe0792657/mza_10072876753813385349.jpg/600x600bb.jpg",
+      "author": "Josh Clark and Chuck Bryant",
+      "category": "Education",
+      "duration": "1h",
+      "releaseDate": "2023-07-03",
+      "episodes": [
+        {
+          "id": 1001,
+          "title": "The Origins of Champagne",
+          "description": "In this episode, Josh and Chuck explore the fascinating history and origins of champagne.",
+          "duration": "45m",
+          "releaseDate": "2023-07-03",
+          "rating": 4.7,
+          "reviews": 122,
+          "imageUrl": "https://picsum.photos/600/600/?random=126"
+        },
+        {
+          "id": 1002,
+          "title": "Satanic Rituals Demystified",
+          "description": "Josh and Chuck delve into the myths and realities of satanic rituals.",
+          "duration": "50m",
+          "releaseDate": "2023-07-04",
+          "rating": 4.6,
+          "reviews": 98,
+          "imageUrl": "https://picsum.photos/600/600/?random=127"
+        },
+        {
+          "id": 1003,
+          "title": "Unraveling the Mystery of Chaos Theory",
+          "description": "Josh and Chuck explain the principles of chaos theory and its applications in various fields.",
+          "duration": "55m",
+          "releaseDate": "2023-07-06",
+          "rating": 4.8,
+          "reviews": 105,
+          "imageUrl": "https://picsum.photos/600/600/?random=128"
+        }
+      ]
+    }
+  ]
+}

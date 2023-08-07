@@ -1,0 +1,21 @@
+{
+  "searchBar": {
+    "placeHolder": "Search Podcast",
+    "notFound": "No results found"
+  },
+  "orderBy": {
+    "title": "Order by",
+    "name": "Name",
+    "duration": "Duration",
+    "released": "Released"
+  },
+  "titlesTable": {
+    "title": "title",
+    "description": "description",
+    "released": "released",
+    "duration": "duration"
+  },
+  "podcastItem": {
+    "goToPodcast": "Go to podcast"
+  }
+}

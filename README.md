@@ -1,8 +1,110 @@
-# React + Vite
+# Free Podcast Player
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Deployment In Vercel
 
-Currently, two official plugins are available:
+[Link to the website displayed in Vercel](https://free-podcast-player.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+
+To install this project, simply clone the repository and install the dependencies using npm:
+
+```
+$ git clone https://github.com/10delin/free-podcast-player.git
+$ cd book-list
+$ npm install
+```
+
+## Interest
+
+The application has an automated commitlint with Husky. Here is an example syntax for more details:
+
+```
+$ git commit -m "feat(app): explain commitlint in readme"
+```
+
+The syntax must be the same as the example, even with spaces. Only the content of "feat" , "app" scope and explication code should be changed.
+
+## Usage
+
+To run the development server, use the following command:
+
+```
+$ npm run dev
+```
+
+To build the production version of the project, use:
+
+```
+$ npm run build
+```
+
+To preview the production build, use:
+
+```
+$ npm run preview
+```
+
+To run cypress tests:
+
+```
+$ npm run cy:run
+```
+
+To open the cypress GUI:
+
+```
+$ npm run cy:open
+```
+
+In addition there are 2 commands to configure Husky's automation.
+
+```
+$ npm run prepare
+```
+
+```
+$ npm run husky
+```
+
+## Pages
+
+#### Home
+
+The Home page shows the search filter, the orderby and the list of available podcasts.
+
+#### Podcast
+
+The Podscast page shows the search filter, the orderby and the list of available episodes.
+
+## Dependencies
+
+- "@commitlint/cli": "^17.6.7"
+- "@commitlint/config-conventional": "^17.6.7"
+- "@reduxjs/toolkit": "^1.9.5"
+- "axios": "^1.4.0"
+- "boxicons": "^2.1.4"
+- "husky": "^8.0.3"
+- "i18next": "^23.4.1"
+- "react": "^18.2.0"
+- "react-dom": "^18.2.0"
+- "react-i18next": "^13.0.3"
+- "react-redux": "^8.1.2"
+- "react-router-dom": "^6.14.2"
+- "react-spinners": "^0.13.8"
+- "styled-components": "^6.0.6"
+
+## Dev Dependencies
+
+- "@types/react": "^18.2.15"
+- "@types/react-dom": "^18.2.7"
+- "@vitejs/plugin-react": "^4.0.3"
+- "cypress": "^12.17.3"
+- "eslint": "^8.45.0"
+- "eslint-plugin-react": "^7.32.2"
+- "eslint-plugin-react-hooks": "^4.6.0"
+- "eslint-plugin-react-refresh": "^0.4.3"
+- "vite": "^4.4.5"
+
+## Credits
+
+This project was created by Antonio Delage Cruzado.
