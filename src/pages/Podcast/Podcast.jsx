@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import PODCASTS from "../../data/mockPodcasts.json";
 import { TITLES_BAR_EPISODES } from "../../utils/model";
 import { styled } from "styled-components";
-import EpisodeImage from "../../assets/images/episode-image.png";
 
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { OrderBy } from "../../components/OrderBy/OrderBy";
@@ -25,7 +24,7 @@ const StyledWrapper = styled.div`
 const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   width: 75%;
 
@@ -76,9 +75,8 @@ const StyledBackButton = styled.button`
 
 const StyledEpisodeImage = styled.img`
   position: relative;
-  display: block;
-  width: 100%;
-  height: auto;
+  display: flex;
+  height: 300px;
 `;
 
 const StyledTitle = styled.div`
@@ -119,19 +117,19 @@ const StyledButton = styled.div`
 export const Podcast = () => {
   const originalPodcasts = PODCASTS.podcasts;
   const [filteredEpisodes, setFilteredEpisodes] = useState([]);
-  const actualEpisode = useSelector((state) => state.actualEpisode);
 
+  const actualEpisode = useSelector((state) => state.actualEpisode);
   const { isPlaying } = useSelector((state) => state.actualEpisode);
   const dispatch = useDispatch();
-
-  const playEpisode = () => {
-    dispatch(setIsPlaying(!isPlaying));
-  };
 
   const id = parseInt(useParams().id);
   const Navigate = useNavigate();
 
   const podcast = [...originalPodcasts].find((podcast) => podcast?.id === id);
+
+  const playEpisode = () => {
+    dispatch(setIsPlaying(!isPlaying));
+  };
 
   const getPodcastTitle = () => {
     const title = PODCASTS?.podcasts?.find(
@@ -156,7 +154,7 @@ export const Podcast = () => {
             setFilteredContent={setFilteredEpisodes}
           />
         </StyledBarContent>
-        <StyledEpisodeImage src={EpisodeImage} alt="picture" />
+        <StyledEpisodeImage src={podcast?.imageUrl} alt="picture" />
         <StyledWrapperTitle>
           <StyledButton $isPlaying={isPlaying} onClick={playEpisode}>
             {isPlaying ? <box-icon name="pause" /> : <box-icon name="play" />}
