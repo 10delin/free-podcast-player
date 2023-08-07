@@ -9,12 +9,17 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "cy:run": "npx cypress run",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "prepare": "husky install .husky",
+    "husky": "node ./node_modules/husky/lib/bin.js"
   },
   "dependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "boxicons": "^2.1.4",
+    "husky": "^8.0.3",
     "i18next": "^23.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
