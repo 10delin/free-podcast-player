@@ -48,10 +48,10 @@ export const TableItem = ({ item, isTitlesPodcast }) => {
   const samePodcastId = Math.floor(data.id / 100) === item.id;
 
   const changeActualEpisode = (episode) => () => {
-    dispatch(resetIsPlaying()); // Detener la reproducción estableciendo isPlaying en false
+    dispatch(resetIsPlaying());
     setTimeout(() => {
-      dispatch(setActualEpisode(episode)); // Cambiar el episodio actual
-      dispatch(setIsPlaying(true)); // Establecer nuevamente isPlaying en true después de un breve lapso
+      dispatch(setActualEpisode(episode));
+      dispatch(setIsPlaying(true));
     }, 100);
   };
 
