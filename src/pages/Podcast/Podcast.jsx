@@ -144,7 +144,7 @@ export const Podcast = () => {
 
   return (
     <StyledWrapper $actualEpisode={actualEpisode}>
-      <StyledContent>
+      <StyledContent data-cy="podcast-content">
         <StyledBarContent>
           <StyledBackButton onClick={() => Navigate(`/`)} data-cy="go-to-home">
             <box-icon name="chevron-left" color="white" />

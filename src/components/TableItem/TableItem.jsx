@@ -61,7 +61,7 @@ export const TableItem = ({ item, isTitlesPodcast }) => {
 
   return (
     <>
-      <StyledWrapper>
+      <StyledWrapper data-cy="table-item">
         <StylesWrapperPodcast
           key={item.id}
           onClick={isTitlesPodcast ? goToPodcast : changeActualEpisode(item)}

@@ -44,7 +44,7 @@ const StyledTitleItem = styled.p`
 export const TableContent = ({ content, titles }) => {
   const isTitlesPodcast = titles.length === 4;
   return (
-    <StyledWrapper>
+    <StyledWrapper data-cy="table-content">
       <StyledTitles>
         {[...titles].map((title) => (
           <StyledTitleItem key={title} $isTitlesPodcast={isTitlesPodcast}>
