@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import PropTypes from "prop-types";
 
-import PODCASTS from "../../data/mockPodcasts.json";
+import { usePodcasts } from "../../hooks/usePodcasts";
 
 const StyledContent = styled.div`
   position: relative;
@@ -59,12 +59,11 @@ const StyledFullName = styled.div`
 `;
 
 export const CurrentEpisode = ({ data }) => {
+  const { podcasts } = usePodcasts();
   const podcastId = Math.floor(data.id / 100);
 
   const getAuthor = () => {
-    const author = PODCASTS?.podcasts?.find(
-      (podcast) => podcast.id === podcastId
-    );
+    const author = podcasts?.find((podcast) => podcast.id === podcastId);
     return author?.author;
   };
   return (

@@ -2,7 +2,6 @@ import { useLayoutEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import PODCASTS from "../../data/mockPodcasts.json";
 import { TITLES_BAR_EPISODES } from "../../utils/model";
 import { styled } from "styled-components";
 
@@ -10,6 +9,7 @@ import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { OrderBy } from "../../components/OrderBy/OrderBy";
 import { TableContent } from "../../components/TableContent/TableContent";
 import { setIsPlaying } from "../../redux/reducers/actualEpisodeSlice";
+import { usePodcasts } from "../../hooks/usePodcasts";
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -115,7 +115,7 @@ const StyledButton = styled.div`
 `;
 
 export const Podcast = () => {
-  const originalPodcasts = PODCASTS.podcasts;
+  const { podcasts, loading } = usePodcasts();
   const [filteredEpisodes, setFilteredEpisodes] = useState([]);
 
   const actualEpisode = useSelector((state) => state.actualEpisode);
@@ -125,51 +125,58 @@ export const Podcast = () => {
   const id = parseInt(useParams().id);
   const Navigate = useNavigate();
 
-  const podcast = [...originalPodcasts].find((podcast) => podcast?.id === id);
+  const podcast = [...podcasts]?.find((podcast) => podcast?.id === id);
 
   const playEpisode = () => {
     dispatch(setIsPlaying(!isPlaying));
   };
 
   const getPodcastTitle = () => {
-    const title = PODCASTS?.podcasts?.find(
-      (podcasts) => podcasts.id === podcast.id
-    );
+    const title = podcasts?.find((podcasts) => podcasts.id === podcast.id);
     return title?.title;
   };
-
   useLayoutEffect(() => {
-    setFilteredEpisodes(podcast?.episodes);
+    if (podcast) {
+      setFilteredEpisodes(podcast.episodes);
+    }
   }, [podcast]);
 
   return (
-    <StyledWrapper $actualEpisode={actualEpisode}>
-      <StyledContent data-cy="podcast-content">
-        <StyledBarContent>
-          <StyledBackButton onClick={() => Navigate(`/`)} data-cy="go-to-home">
-            <box-icon name="chevron-left" color="white" />
-          </StyledBackButton>
-          <SearchBar
-            originalPodcasts={podcast.episodes}
-            setFilteredContent={setFilteredEpisodes}
+    !loading && (
+      <StyledWrapper $actualEpisode={actualEpisode}>
+        <StyledContent data-cy="podcast-content">
+          <StyledBarContent>
+            <StyledBackButton
+              onClick={() => Navigate(`/`)}
+              data-cy="go-to-home"
+            >
+              <box-icon name="chevron-left" color="white" />
+            </StyledBackButton>
+            <SearchBar
+              originalPodcasts={podcast?.episodes}
+              setFilteredContent={setFilteredEpisodes}
+            />
+          </StyledBarContent>
+          <StyledEpisodeImage src={podcast?.imageUrl} alt="picture" />
+          <StyledWrapperTitle>
+            <StyledButton $isPlaying={isPlaying} onClick={playEpisode}>
+              {isPlaying ? <box-icon name="pause" /> : <box-icon name="play" />}
+            </StyledButton>
+            <StyledTitle>
+              <h2>{getPodcastTitle()}</h2>
+              <box-icon type="solid" name="badge-check" />
+            </StyledTitle>
+            <OrderBy
+              originalPodcasts={podcast?.episodes}
+              setFilteredContent={setFilteredEpisodes}
+            />
+          </StyledWrapperTitle>
+          <TableContent
+            content={filteredEpisodes}
+            titles={TITLES_BAR_EPISODES}
           />
-        </StyledBarContent>
-        <StyledEpisodeImage src={podcast?.imageUrl} alt="picture" />
-        <StyledWrapperTitle>
-          <StyledButton $isPlaying={isPlaying} onClick={playEpisode}>
-            {isPlaying ? <box-icon name="pause" /> : <box-icon name="play" />}
-          </StyledButton>
-          <StyledTitle>
-            <h2>{getPodcastTitle()}</h2>
-            <box-icon type="solid" name="badge-check" />
-          </StyledTitle>
-          <OrderBy
-            originalPodcasts={podcast.episodes}
-            setFilteredContent={setFilteredEpisodes}
-          />
-        </StyledWrapperTitle>
-        <TableContent content={filteredEpisodes} titles={TITLES_BAR_EPISODES} />
-      </StyledContent>
-    </StyledWrapper>
+        </StyledContent>
+      </StyledWrapper>
+    )
   );
 };
