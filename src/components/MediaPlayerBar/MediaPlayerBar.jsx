@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-import PODCASTS from "../../data/mockPodcasts.json";
 import { MediaPlayerButtons } from "../MediaPlayerButtons/MediaPlayerButtons";
 import { PlaybackBar } from "../PlaybackBar/PlaybackBar";
 import { VolumePlayer } from "../VolumePlayer/VolumePlayer";
+import { CurrentEpisode } from "../CurrentEpisode/CurrentEpisode";
 
 const StyledWrapper = styled.div`
   position: fixed;
@@ -20,70 +20,12 @@ const StyledWrapper = styled.div`
   gap: 50px;
 `;
 
-const StyledContent = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-  width: 25%;
-`;
-
-const StyledContentName = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  color: #808080;
-  p {
-    margin: 0;
-    padding: 0;
-  }
-`;
-
-const StyledNameTitle = styled.p`
-  margin: 0;
-  padding: 0;
-  color: #ffffff;
-  font-weight: 500;
-`;
-
-const StyledImage = styled.img`
-  position: relative;
-  width: 110px;
-  height: 110px;
-`;
-
-const StyledFullName = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-`;
-
 export const MediaPlayerBar = () => {
   const { data, isPlaying } = useSelector((state) => state.actualEpisode);
-  const podcastId = Math.floor(data.id / 100);
-
-  const getAuthor = () => {
-    const author = PODCASTS?.podcasts?.find(
-      (podcast) => podcast.id === podcastId
-    );
-    return author?.author;
-  };
 
   return data ? (
     <StyledWrapper data-cy="media-player-bar">
-      <StyledContent>
-        <StyledImage src={data?.imageUrl} alt={data?.title} />
-        <StyledContentName>
-          <StyledFullName>
-            <StyledNameTitle>{data.title}</StyledNameTitle>
-            <p>{getAuthor()}</p>
-          </StyledFullName>
-        </StyledContentName>
-      </StyledContent>
+      <CurrentEpisode data={data} />
       <MediaPlayerButtons />
       <PlaybackBar currentTrack={data} isPlaying={isPlaying} />
       <VolumePlayer />

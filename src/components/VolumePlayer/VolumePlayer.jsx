@@ -8,8 +8,7 @@ const StyledWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 2px;
-  margin-right: 15px;
-  width: 10%;
+  margin-right: 5px;
 `;
 const StyledVolumeBar = styled.input`
   width: 100px;
