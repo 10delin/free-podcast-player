@@ -61,7 +61,8 @@ export const PlaybackBar = ({ currentTrack, isPlaying }) => {
   useEffect(() => {
     let interval;
     const sumTime = timeInSeconds / 100;
-
+    setProgress(0);
+    setCounter(0);
     if (isPlaying) {
       interval = setInterval(() => {
         setProgress((prevProgress) => {

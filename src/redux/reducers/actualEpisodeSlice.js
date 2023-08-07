@@ -8,16 +8,17 @@ export const actualEpisodeSlice = createSlice({
   },
   reducers: {
     setActualEpisode: (state, action) => {
-      return {
-        ...state,
-        data: action.payload,
-      };
+      state.data = action.payload;
     },
     setIsPlaying: (state, action) => {
       state.isPlaying = action.payload;
     },
+    resetIsPlaying: (state) => {
+      state.isPlaying = false;
+    },
   },
 });
 
-export const { setActualEpisode, setIsPlaying } = actualEpisodeSlice.actions;
+export const { setActualEpisode, setIsPlaying, resetIsPlaying } =
+  actualEpisodeSlice.actions;
 export default actualEpisodeSlice.reducer;

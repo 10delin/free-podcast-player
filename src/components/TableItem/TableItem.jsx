@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import {
+  resetIsPlaying,
   setActualEpisode,
   setIsPlaying,
 } from "../../redux/reducers/actualEpisodeSlice";
@@ -47,8 +48,11 @@ export const TableItem = ({ item, isTitlesPodcast }) => {
   const samePodcastId = Math.floor(data.id / 100) === item.id;
 
   const changeActualEpisode = (episode) => () => {
-    dispatch(setActualEpisode(episode));
-    dispatch(sameId ? setIsPlaying(!isPlaying) : setIsPlaying(true));
+    dispatch(resetIsPlaying()); // Detener la reproducción estableciendo isPlaying en false
+    setTimeout(() => {
+      dispatch(setActualEpisode(episode)); // Cambiar el episodio actual
+      dispatch(setIsPlaying(true)); // Establecer nuevamente isPlaying en true después de un breve lapso
+    }, 100);
   };
 
   const goToPodcast = () => {
