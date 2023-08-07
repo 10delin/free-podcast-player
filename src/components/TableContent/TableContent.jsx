@@ -30,22 +30,9 @@ const StyledTitleItem = styled.p`
   &:first-child {
     width: 5%;
   }
-
-  &:nth-child(2) {
-    width: 30%;
-  }
-
-  &:nth-child(3) {
-    width: 30%;
-  }
-
-  &:nth-child(4) {
-    width: 10%;
-  }
-
-  &:nth-child(5) {
-    width: 5%;
-  }
+  ${[30, 30, 10, 5]
+    .map((width, index) => `&:nth-child(${index + 2}) { width: ${width}%; }`)
+    .join("")}
 
   box-icon {
     fill: #808080;

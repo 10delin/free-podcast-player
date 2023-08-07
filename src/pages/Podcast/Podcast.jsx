@@ -1,5 +1,6 @@
 import { useLayoutEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import PODCASTS from "../../data/mockPodcasts.json";
 import { TITLES_BAR_EPISODES } from "../../utils/model";
@@ -9,7 +10,6 @@ import EpisodeImage from "../../assets/images/episode-image.png";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { OrderBy } from "../../components/OrderBy/OrderBy";
 import { TableContent } from "../../components/TableContent/TableContent";
-import { useDispatch, useSelector } from "react-redux";
 import { setIsPlaying } from "../../redux/reducers/actualEpisodeSlice";
 
 const StyledWrapper = styled.div`

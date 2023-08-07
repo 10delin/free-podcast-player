@@ -1,8 +1,9 @@
-import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { styled } from "styled-components";
 import { setIsPlaying } from "../../redux/reducers/actualEpisodeSlice";
+
+import PropTypes from "prop-types";
+import { styled } from "styled-components";
 
 const StyledWrapper = styled.div`
   position: relative;
@@ -79,7 +80,7 @@ export const PlaybackBar = ({ currentTrack, isPlaying }) => {
 
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPlaying, currentTrack.durationInSeconds]);
+  }, [isPlaying]);
 
   return (
     <StyledWrapper>
@@ -97,11 +98,8 @@ export const PlaybackBar = ({ currentTrack, isPlaying }) => {
 
 PlaybackBar.propTypes = {
   currentTrack: PropTypes.shape({
-    albumCover: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    artist: PropTypes.string.isRequired,
     duration: PropTypes.string.isRequired,
-    durationInSeconds: PropTypes.number.isRequired,
   }),
   isPlaying: PropTypes.bool.isRequired,
 };

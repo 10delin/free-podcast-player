@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+
 import { PlayMediaButton } from "../PlayButtons/PlayButtons";
 
 const StyledWrapper = styled.div`

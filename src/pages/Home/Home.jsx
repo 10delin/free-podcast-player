@@ -25,6 +25,7 @@ const StyledContent = styled.div`
   align-items: flex-end;
   justify-content: center;
   width: 75%;
+  gap: 30px;
 
   @media (max-width: 768px) {
     width: 100%;

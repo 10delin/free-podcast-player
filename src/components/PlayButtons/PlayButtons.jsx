@@ -1,7 +1,8 @@
-import { styled } from "styled-components";
-import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsPlaying } from "../../redux/reducers/actualEpisodeSlice";
+
+import { styled } from "styled-components";
+import PropTypes from "prop-types";
 
 const StyledMediaButton = styled.div`
   position: relative;
@@ -69,11 +70,6 @@ export const PlayItemButton = ({ sameId, isPlaying }) => {
       )}
     </StyledItemButtton>
   );
-};
-
-PlayMediaButton.propTypes = {
-  isPlaying: PropTypes.bool.isRequired,
-  sameId: PropTypes.bool.isRequired,
 };
 
 PlayItemButton.propTypes = {

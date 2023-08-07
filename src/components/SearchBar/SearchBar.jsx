@@ -10,7 +10,7 @@ const StyledWrapper = styled.form`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 0 0 100px 0;
+  margin: 0 0 70px 0;
   width: 100%;
   background-color: #1a1a1a;
   border: 2px solid transparent;

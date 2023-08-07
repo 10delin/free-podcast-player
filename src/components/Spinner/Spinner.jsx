@@ -1,6 +1,6 @@
-import ClipLoader from "react-spinners/ClipLoader";
 import styled from "styled-components";
-import PropTypes from "prop-types";
+
+import ClipLoader from "react-spinners/ClipLoader";
 
 const StyledWrapper = styled.div`
   position: relative;
@@ -18,8 +18,4 @@ export const Spinner = () => {
       <StyledClipLoader />
     </StyledWrapper>
   );
-};
-
-Spinner.propTypes = {
-  isLoaded: PropTypes.bool.isRequired,
 };
