@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/podcast/:id", "destination": "/index.html" }]
+}
