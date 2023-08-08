@@ -1,6 +1,7 @@
 import { useLayoutEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useFetchPodcastsQuery } from "../../redux/features/podcastsApi";
 
 import { TITLES_BAR_EPISODES } from "../../utils/model";
 import { styled } from "styled-components";
@@ -9,7 +10,6 @@ import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { OrderBy } from "../../components/OrderBy/OrderBy";
 import { TableContent } from "../../components/TableContent/TableContent";
 import { setIsPlaying } from "../../redux/reducers/actualEpisodeSlice";
-import { usePodcasts } from "../../hooks/usePodcasts";
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -115,7 +115,7 @@ const StyledButton = styled.div`
 `;
 
 export const Podcast = () => {
-  const { podcasts, loading } = usePodcasts();
+  const { data: podcasts, isLoading: loading } = useFetchPodcastsQuery();
   const [filteredEpisodes, setFilteredEpisodes] = useState([]);
 
   const actualEpisode = useSelector((state) => state.actualEpisode);

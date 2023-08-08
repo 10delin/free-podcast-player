@@ -1,11 +1,11 @@
+import { MediaPlayerButtons } from "../MediaPlayerButtons/MediaPlayerButtons";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-import { usePodcasts } from "../../hooks/usePodcasts";
-import { MediaPlayerButtons } from "../MediaPlayerButtons/MediaPlayerButtons";
 import { PlaybackBar } from "../PlaybackBar/PlaybackBar";
 import { VolumePlayer } from "../VolumePlayer/VolumePlayer";
 import { CurrentEpisode } from "../CurrentEpisode/CurrentEpisode";
+import { useFetchPodcastsQuery } from "../../redux/features/podcastsApi";
 
 const StyledWrapper = styled.div`
   position: fixed;
@@ -22,7 +22,7 @@ const StyledWrapper = styled.div`
 `;
 
 export const MediaPlayerBar = () => {
-  const { podcasts } = usePodcasts();
+  const { data: podcasts } = useFetchPodcastsQuery();
   const { data, isPlaying } = useSelector((state) => state.actualEpisode);
 
   return data ? (

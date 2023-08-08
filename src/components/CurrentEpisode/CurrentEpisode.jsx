@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import PropTypes from "prop-types";
 
-import { usePodcasts } from "../../hooks/usePodcasts";
+import { useFetchPodcastsQuery } from "../../redux/features/podcastsApi";
 
 const StyledContent = styled.div`
   position: relative;
@@ -59,7 +59,7 @@ const StyledFullName = styled.div`
 `;
 
 export const CurrentEpisode = ({ data }) => {
-  const { podcasts } = usePodcasts();
+  const { data: podcasts } = useFetchPodcastsQuery();
   const podcastId = Math.floor(data.id / 100);
 
   const getAuthor = () => {
