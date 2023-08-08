@@ -125,16 +125,12 @@ export const Podcast = () => {
   const id = parseInt(useParams().id);
   const Navigate = useNavigate();
 
-  const podcast = [...podcasts]?.find((podcast) => podcast?.id === id);
+  const podcast = podcasts?.find((podcast) => podcast?.id === id);
 
   const playEpisode = () => {
     dispatch(setIsPlaying(!isPlaying));
   };
 
-  const getPodcastTitle = () => {
-    const title = podcasts?.find((podcasts) => podcasts.id === podcast.id);
-    return title?.title;
-  };
   useLayoutEffect(() => {
     if (podcast) {
       setFilteredEpisodes(podcast.episodes);
@@ -163,7 +159,7 @@ export const Podcast = () => {
               {isPlaying ? <box-icon name="pause" /> : <box-icon name="play" />}
             </StyledButton>
             <StyledTitle>
-              <h2>{getPodcastTitle()}</h2>
+              <h2>{podcast?.title}</h2>
               <box-icon type="solid" name="badge-check" />
             </StyledTitle>
             <OrderBy
