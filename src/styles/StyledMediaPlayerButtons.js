@@ -26,22 +26,3 @@ export const StyledButtons = styled.div`
   align-items: center;
   gap: 20px;
 `;
-
-export const CustomBoxIcon = styled.div`
-  width: ${({ name }) =>
-    name === "shuffle" || name === "repeat" ? "30px" : "40px"};
-  height: ${({ name }) =>
-    name === "shuffle" || name === "repeat" ? "30px" : "40px"};
-  fill: white;
-  border-radius: 50%;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #4a52c0;
-  }
-
-  box-icon {
-    width: 100%;
-    height: 100%;
-  }
-`;
