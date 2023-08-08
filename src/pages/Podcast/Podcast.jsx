@@ -19,6 +19,7 @@ import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { OrderBy } from "../../components/OrderBy/OrderBy";
 import { TableContent } from "../../components/TableContent/TableContent";
 import { setIsPlaying } from "../../redux/reducers/actualEpisodeSlice";
+import { EmptyPodcast } from "../../components/EmptyPodcast/EmptyPodcast";
 
 export const Podcast = () => {
   const { data: podcasts, isLoading: loading } = useFetchPodcastsQuery();
@@ -42,6 +43,8 @@ export const Podcast = () => {
       setFilteredEpisodes(podcast.episodes);
     }
   }, [podcast]);
+
+  if (!podcast) return <EmptyPodcast Navigate={Navigate} />;
 
   return (
     !loading && (

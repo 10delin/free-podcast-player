@@ -8,7 +8,7 @@ const store = configureStore({
     [podcastsApi.reducerPath]: podcastsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(podcastsApi.middleware), // Agrega el middleware de RTK Query
+    getDefaultMiddleware().concat(podcastsApi.middleware),
 });
 
 export default store;

@@ -17,5 +17,9 @@
   },
   "podcastItem": {
     "goToPodcast": "Go to podcast"
+  },
+  "emptyPodcast": {
+    "title": "No podcast found",
+    "button": "Back to Home"
   }
 }

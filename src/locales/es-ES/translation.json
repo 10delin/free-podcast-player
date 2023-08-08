@@ -18,5 +18,9 @@
   },
   "podcastItem": {
     "goToPodcast": "Ir al podcast"
+  },
+  "emptyPodcast": {
+    "title": "No existe el podcast",
+    "button": "Volver a inicio"
   }
 }
