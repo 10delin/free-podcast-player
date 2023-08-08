@@ -1,41 +1,21 @@
+import { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
-import PropTypes from "prop-types";
-import styled from "styled-components";
-
 import {
   resetIsPlaying,
   setActualEpisode,
   setIsPlaying,
 } from "../../redux/reducers/actualEpisodeSlice";
-import { useState } from "react";
+import PropTypes from "prop-types";
+
+import {
+  StyledWrapper,
+  StylesWrapperPodcast,
+} from "../../styles/StyledTableItem";
+
 import { PodcastItem } from "../PodcastItem/PodcastItem";
 import { EpisodeItem } from "../EpisodeItem/EpisodeItem";
-
-const StyledWrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-`;
-
-const StylesWrapperPodcast = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  border-top: 1px solid #1b1c20;
-  padding: 2px 0;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #383737;
-  }
-`;
 
 export const TableItem = ({ item, isTitlesPodcast }) => {
   const navigate = useNavigate();

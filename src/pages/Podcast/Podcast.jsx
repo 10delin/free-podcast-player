@@ -4,115 +4,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { useFetchPodcastsQuery } from "../../redux/features/podcastsApi";
 
 import { TITLES_BAR_EPISODES } from "../../utils/model";
-import { styled } from "styled-components";
+import {
+  StyledWrapper,
+  StyledContent,
+  StyledBarContent,
+  StyledWrapperTitle,
+  StyledBackButton,
+  StyledEpisodeImage,
+  StyledTitle,
+  StyledButton,
+} from "../../styles/StyledPodcast";
 
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { OrderBy } from "../../components/OrderBy/OrderBy";
 import { TableContent } from "../../components/TableContent/TableContent";
 import { setIsPlaying } from "../../redux/reducers/actualEpisodeSlice";
-
-const StyledWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 20px;
-  width: 100%;
-  ${({ $actualEpisode }) => ($actualEpisode ? "margin-bottom: 110px;" : "")}
-`;
-
-const StyledContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 75%;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`;
-
-const StyledBarContent = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 100%;
-  gap: 10px;
-`;
-
-const StyledWrapperTitle = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 50px;
-`;
-
-const StyledBackButton = styled.button`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 10px;
-  background-color: #1a1a1a;
-  border: none;
-  color: #fff;
-
-  &:hover {
-    cursor: pointer;
-    background-color: #383737;
-  }
-
-  box-icon {
-    width: 30px;
-    height: 30px;
-    fill: white;
-  }
-`;
-
-const StyledEpisodeImage = styled.img`
-  position: relative;
-  display: flex;
-  height: 300px;
-`;
-
-const StyledTitle = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  color: #ffffff;
-  font-weight: 500;
-  margin-left: 100px;
-
-  box-icon {
-    width: 30px;
-    height: 30px;
-    fill: #2593e0;
-  }
-`;
-
-const StyledButton = styled.div`
-  position: relative;
-
-  box-icon {
-    width: 50px;
-    height: 50px;
-    fill: white;
-    border-radius: 50%;
-    background-color: ${({ $isPlaying }) =>
-      $isPlaying ? "#4a52c0" : "transparent"};
-    cursor: pointer;
-
-    &:hover {
-      background-color: #4a52c0;
-    }
-  }
-`;
 
 export const Podcast = () => {
   const { data: podcasts, isLoading: loading } = useFetchPodcastsQuery();
