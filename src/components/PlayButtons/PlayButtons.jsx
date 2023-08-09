@@ -1,52 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setIsPlaying } from "../../redux/reducers/actualEpisodeSlice";
-
-import { styled } from "styled-components";
 import PropTypes from "prop-types";
 
-const StyledMediaButton = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+import {
+  StyledMediaButton,
+  StyledItemButtton,
+} from "../../styles/StyledPlayButtons";
 
-  box-icon {
-    width: 40px;
-    height: 40px;
-    fill: white;
-    border-radius: 50%;
-    background-color: ${({ $isPlaying }) =>
-      $isPlaying ? "#4a52c0" : "transparent"};
-    cursor: pointer;
-
-    &:hover {
-      background-color: #4a52c0;
-    }
-  }
-`;
-
-const StyledItemButtton = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  box-icon {
-    width: 40px;
-    height: 40px;
-    fill: white;
-    border-radius: 50%;
-    background-color: ${({ $isPlaying, $sameId }) =>
-      $isPlaying && $sameId ? "#4a52c0" : "transparent"};
-    cursor: pointer;
-
-    &:hover {
-      background-color: #4a52c0;
-    }
-  }
-`;
-
-export const PlayMediaButton = () => {
+export const MediaPlayButton = () => {
   const { isPlaying } = useSelector((state) => state.actualEpisode);
   const dispatch = useDispatch();
 

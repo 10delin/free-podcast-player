@@ -11,6 +11,7 @@ export const AppRoutes = () => {
       <Routes navigate={(to) => navigate(to)}>
         <Route path="/" element={<Home />} />
         <Route path="/podcast/:id" element={<Podcast />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </>
   );
