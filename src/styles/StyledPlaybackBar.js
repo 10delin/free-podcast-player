@@ -26,3 +26,7 @@ export const StyledProgressBar = styled.progress`
     background-color: #ffffff;
   }
 `;
+
+export const StyledTotalDuration = styled.span`
+  color: #808080;
+`;

@@ -6,20 +6,13 @@ import PropTypes from "prop-types";
 import {
   StyledWrapper,
   StyledProgressBar,
+  StyledTotalDuration,
 } from "../../styles/StyledPlaybackBar";
 
 export const PlaybackBar = ({ currentTrack, isPlaying }) => {
   const [progress, setProgress] = useState(0);
   const [counter, setCounter] = useState(0);
   const dispatch = useDispatch();
-
-  const handleSeekMouseDown = () => {
-    dispatch(setIsPlaying(false));
-  };
-
-  const handleSeekMouseUp = () => {
-    dispatch(setIsPlaying(true));
-  };
 
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
@@ -65,10 +58,10 @@ export const PlaybackBar = ({ currentTrack, isPlaying }) => {
       <StyledProgressBar
         max={timeInSeconds}
         value={progress}
-        onMouseDown={handleSeekMouseDown}
-        onMouseUp={handleSeekMouseUp}
       ></StyledProgressBar>
-      <span>{formatTime(convertToSeconds(currentTrack.duration))}</span>
+      <StyledTotalDuration>
+        {formatTime(convertToSeconds(currentTrack.duration))}
+      </StyledTotalDuration>
     </StyledWrapper>
   );
 };

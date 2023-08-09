@@ -4,7 +4,7 @@ import {
   StyledWrapperTitle,
   StyledTitle,
   StyledButton,
-} from "../../styles/StyledPodcast";
+} from "../../styles/StyledPodcastWrapperTitle";
 
 import { OrderBy } from "../../components/OrderBy/OrderBy";
 
@@ -39,6 +39,5 @@ PodcastWrapperTitle.propTypes = {
   podcast: PropTypes.object.isRequired,
   actualEpisode: PropTypes.object.isRequired,
   playEpisode: PropTypes.func.isRequired,
-  Navigate: PropTypes.func.isRequired,
   setFilteredEpisodes: PropTypes.func.isRequired,
 };

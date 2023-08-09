@@ -27,17 +27,6 @@ export const PodcastNavigationBar = ({
 
 PodcastNavigationBar.propTypes = {
   Navigate: PropTypes.func.isRequired,
-  podcast: PropTypes.shape({
-    episodes: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        title: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        date: PropTypes.string.isRequired,
-        duration: PropTypes.number.isRequired,
-        url: PropTypes.string.isRequired,
-      })
-    ),
-  }).isRequired,
-  setFilteredEpisodes: PropTypes.func.isRequired,
+  podcast: PropTypes.object.isRequired,
+  setFilteredEpisodes: PropTypes.func,
 };

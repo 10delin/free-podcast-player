@@ -6,7 +6,7 @@ import {
   StyledButtons,
 } from "../../styles/StyledMediaPlayerButtons";
 
-import { PlayMediaButton } from "../PlayButtons/PlayButtons";
+import { MediaPlayButton } from "../PlayButtons/PlayButtons";
 import { MediaAleatoryButton } from "../MediaAleatoryButton/MediaAleatoryButton";
 import { MediaRepeatButton } from "../MediaRepeatButton/MediaRepeatButton";
 import { MediaNextButton } from "../MediaNextButton/MediaNextButton";
@@ -31,7 +31,7 @@ export const MediaPlayerButtons = ({ podcast }) => {
             currentPodcast={currentPodcast}
             currentEpisodeId={currentEpisodeId}
           />
-          <PlayMediaButton />
+          <MediaPlayButton />
           <MediaNextButton
             dispatch={dispatch}
             currentPodcast={currentPodcast}

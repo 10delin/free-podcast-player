@@ -36,5 +36,5 @@ export const MediaNextButton = ({
 MediaNextButton.propTypes = {
   dispatch: PropTypes.func.isRequired,
   currentPodcast: PropTypes.object.isRequired,
-  currentEpisodeId: PropTypes.string.isRequired,
+  currentEpisodeId: PropTypes.number.isRequired,
 };

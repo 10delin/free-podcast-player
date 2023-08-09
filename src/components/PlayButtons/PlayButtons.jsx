@@ -7,7 +7,7 @@ import {
   StyledItemButtton,
 } from "../../styles/StyledPlayButtons";
 
-export const PlayMediaButton = () => {
+export const MediaPlayButton = () => {
   const { isPlaying } = useSelector((state) => state.actualEpisode);
   const dispatch = useDispatch();
 
