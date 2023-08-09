@@ -1,19 +1,16 @@
 import { useEffect, useState } from "react";
+
 import PropTypes from "prop-types";
+import { TITLES_BAR_EPISODES } from "../../utils/model";
 import {
   StyledWrapper,
   StyledContent,
-  StyledBarContent,
-  StyledWrapperTitle,
-  StyledBackButton,
   StyledEpisodeImage,
-  StyledTitle,
-  StyledButton,
 } from "../../styles/StyledPodcast";
-import { SearchBar } from "../../components/SearchBar/SearchBar";
-import { OrderBy } from "../../components/OrderBy/OrderBy";
+
 import { TableContent } from "../../components/TableContent/TableContent";
-import { TITLES_BAR_EPISODES } from "../../utils/model";
+import { PodcastNavigationBar } from "../PodcastNavigationBar/PodcastNavigationBar";
+import { PodcastWrapperTitle } from "../PodcastWrapperTitle/PodcastWrapperTitle";
 
 export const PodcastContent = ({
   podcast,
@@ -30,36 +27,14 @@ export const PodcastContent = ({
   return (
     <StyledWrapper $actualEpisode={actualEpisode}>
       <StyledContent data-cy="podcast-content">
-        <StyledBarContent>
-          <StyledBackButton onClick={() => Navigate(`/`)} data-cy="go-to-home">
-            <box-icon name="chevron-left" color="white" />
-          </StyledBackButton>
-          <SearchBar
-            originalPodcasts={podcast.episodes}
-            setFilteredContent={setFilteredEpisodes}
-          />
-        </StyledBarContent>
+        <PodcastNavigationBar Navigate={Navigate} podcast={podcast} />
         <StyledEpisodeImage src={podcast.imageUrl} alt="picture" />
-        <StyledWrapperTitle>
-          <StyledButton
-            $isPlaying={actualEpisode.isPlaying}
-            onClick={playEpisode}
-          >
-            {actualEpisode.isPlaying ? (
-              <box-icon name="pause" />
-            ) : (
-              <box-icon name="play" />
-            )}
-          </StyledButton>
-          <StyledTitle>
-            <h2>{podcast.title}</h2>
-            <box-icon type="solid" name="badge-check" />
-          </StyledTitle>
-          <OrderBy
-            originalPodcasts={podcast.episodes}
-            setFilteredContent={setFilteredEpisodes}
-          />
-        </StyledWrapperTitle>
+        <PodcastWrapperTitle
+          podcast={podcast}
+          actualEpisode={actualEpisode}
+          playEpisode={playEpisode}
+          setFilteredEpisodes={setFilteredEpisodes}
+        />
         <TableContent content={filteredEpisodes} titles={TITLES_BAR_EPISODES} />
       </StyledContent>
     </StyledWrapper>
