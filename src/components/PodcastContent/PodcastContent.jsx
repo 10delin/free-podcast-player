@@ -27,7 +27,11 @@ export const PodcastContent = ({
   return (
     <StyledWrapper $actualEpisode={actualEpisode}>
       <StyledContent data-cy="podcast-content">
-        <PodcastNavigationBar Navigate={Navigate} podcast={podcast} />
+        <PodcastNavigationBar
+          Navigate={Navigate}
+          podcast={podcast}
+          setFilteredEpisodes={setFilteredEpisodes}
+        />
         <StyledEpisodeImage src={podcast.imageUrl} alt="picture" />
         <PodcastWrapperTitle
           podcast={podcast}

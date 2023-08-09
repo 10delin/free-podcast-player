@@ -67,5 +67,5 @@ SearchBar.propTypes = {
       title: PropTypes.string.isRequired,
     })
   ).isRequired,
-  setFilteredContent: PropTypes.func,
+  setFilteredContent: PropTypes.func.isRequired,
 };
