@@ -28,5 +28,5 @@ export const PodcastNavigationBar = ({
 PodcastNavigationBar.propTypes = {
   Navigate: PropTypes.func.isRequired,
   podcast: PropTypes.object.isRequired,
-  setFilteredEpisodes: PropTypes.func,
+  setFilteredEpisodes: PropTypes.func.isRequired,
 };
