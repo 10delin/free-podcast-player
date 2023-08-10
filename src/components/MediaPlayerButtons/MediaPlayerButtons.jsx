@@ -15,10 +15,8 @@ import { MediaPreviousButton } from "../MediaPreviousButton/MediaPreviousButton"
 export const MediaPlayerButtons = ({ podcast }) => {
   const dispatch = useDispatch();
   const currentEpisodeId = useSelector((state) => state.actualEpisode.data.id);
-  const currentPodcastId = parseInt(currentEpisodeId.toString()[0]);
-
   const currentPodcast = podcast?.find(
-    (podcast) => podcast.id === currentPodcastId
+    (podcast) => podcast.id === currentEpisodeId
   );
 
   return (

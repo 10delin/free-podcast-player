@@ -4,6 +4,10 @@ import { useSelector } from "react-redux";
 import { TITLES_BAR_PODCAST } from "../../utils/model";
 import { useFetchPodcastsQuery } from "../../redux/features/podcastsApi";
 import { StyledWrapper, StyledContent } from "../../styles/StyledHome";
+import {
+  getLocalStorageItem,
+  setLocalStorageItem,
+} from "../../utils/localStorageData";
 
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { OrderBy } from "../../components/OrderBy/OrderBy";
@@ -15,7 +19,17 @@ export const Home = () => {
   const actualEpisode = useSelector((state) => state.actualEpisode);
 
   useEffect(() => {
-    if (podcasts) setFilteredPodcasts(podcasts);
+    const localPodcasts = getLocalStorageItem("podcastsData");
+    if (localPodcasts) {
+      setFilteredPodcasts(localPodcasts);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (podcasts) {
+      setLocalStorageItem("podcastsData", podcasts);
+      setFilteredPodcasts(podcasts);
+    }
   }, [podcasts]);
 
   return (

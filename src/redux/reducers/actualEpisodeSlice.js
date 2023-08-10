@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { setLocalStorageItem } from "../../utils/localStorageData";
 
 export const actualEpisodeSlice = createSlice({
   name: "actualEpisode",
@@ -9,6 +10,7 @@ export const actualEpisodeSlice = createSlice({
   reducers: {
     setActualEpisode: (state, action) => {
       state.data = action.payload;
+      setLocalStorageItem("actualEpisode", action.payload);
     },
     setIsPlaying: (state, action) => {
       state.isPlaying = action.payload;

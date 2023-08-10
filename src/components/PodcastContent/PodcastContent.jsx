@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import PropTypes from "prop-types";
 import { TITLES_BAR_EPISODES } from "../../utils/model";
 import {
@@ -17,12 +16,20 @@ export const PodcastContent = ({
   actualEpisode,
   playEpisode,
   Navigate,
+  setPodcastsDataToLocal,
+  getPodcastsDataFromLocal,
 }) => {
   const [filteredEpisodes, setFilteredEpisodes] = useState(podcast.episodes);
 
   useEffect(() => {
     setFilteredEpisodes(podcast.episodes);
   }, [podcast]);
+
+  const handleEpisodePlay = () => {
+    const podcastsData = getPodcastsDataFromLocal();
+    setPodcastsDataToLocal(podcastsData);
+    playEpisode();
+  };
 
   return (
     <StyledWrapper $actualEpisode={actualEpisode}>
@@ -36,7 +43,7 @@ export const PodcastContent = ({
         <PodcastWrapperTitle
           podcast={podcast}
           actualEpisode={actualEpisode}
-          playEpisode={playEpisode}
+          playEpisode={handleEpisodePlay}
           setFilteredEpisodes={setFilteredEpisodes}
         />
         <TableContent content={filteredEpisodes} titles={TITLES_BAR_EPISODES} />
@@ -50,4 +57,6 @@ PodcastContent.propTypes = {
   actualEpisode: PropTypes.object.isRequired,
   playEpisode: PropTypes.func.isRequired,
   Navigate: PropTypes.func.isRequired,
+  setPodcastsDataToLocal: PropTypes.func.isRequired,
+  getPodcastsDataFromLocal: PropTypes.func.isRequired,
 };
