@@ -2,6 +2,7 @@ import { MediaPlayerButtons } from "../MediaPlayerButtons/MediaPlayerButtons";
 import { useSelector } from "react-redux";
 
 import { StyledWrapper } from "../../styles/StyledMediaPlayerBar";
+import { getLocalStorageItem } from "../../utils/localStorageData";
 
 import { PlaybackBar } from "../PlaybackBar/PlaybackBar";
 import { VolumePlayer } from "../VolumePlayer/VolumePlayer";
@@ -12,11 +13,16 @@ export const MediaPlayerBar = () => {
   const { data: podcasts } = useFetchPodcastsQuery();
   const { data, isPlaying } = useSelector((state) => state.actualEpisode);
 
-  return data ? (
+  const storedPodcasts = getLocalStorageItem("podcastsData");
+  const storedActualEpisode = getLocalStorageItem("actualEpisode");
+
+  const actualEpisode = storedActualEpisode || data;
+
+  return actualEpisode ? (
     <StyledWrapper data-cy="media-player-bar">
-      <CurrentEpisode data={data} />
-      <MediaPlayerButtons podcast={podcasts} />
-      <PlaybackBar currentTrack={data} isPlaying={isPlaying} />
+      <CurrentEpisode data={actualEpisode} />
+      <MediaPlayerButtons podcast={storedPodcasts || podcasts} />
+      <PlaybackBar currentTrack={actualEpisode} isPlaying={isPlaying} />
       <VolumePlayer />
     </StyledWrapper>
   ) : null;

@@ -4,6 +4,10 @@ import { useFetchPodcastsQuery } from "../../redux/features/podcastsApi";
 import { setIsPlaying } from "../../redux/reducers/actualEpisodeSlice";
 import { EmptyPodcast } from "../../components/EmptyPodcast/EmptyPodcast";
 import { PodcastContent } from "../../components/PodcastContent/PodcastContent";
+import {
+  getLocalStorageItem,
+  setLocalStorageItem,
+} from "../../utils/localStorageData";
 
 export const Podcast = () => {
   const { data: podcasts, isLoading: loading } = useFetchPodcastsQuery();
@@ -17,6 +21,14 @@ export const Podcast = () => {
     dispatch(setIsPlaying(!actualEpisode.isPlaying));
   };
 
+  const setPodcastsDataToLocal = (data) => {
+    setLocalStorageItem("podcastsData", data);
+  };
+
+  const getPodcastsDataFromLocal = () => {
+    return getLocalStorageItem("podcastsData", []);
+  };
+
   if (!podcast) return <EmptyPodcast Navigate={Navigate} />;
 
   return (
@@ -26,6 +38,8 @@ export const Podcast = () => {
         actualEpisode={actualEpisode}
         playEpisode={playEpisode}
         Navigate={Navigate}
+        setPodcastsDataToLocal={setPodcastsDataToLocal}
+        getPodcastsDataFromLocal={getPodcastsDataFromLocal}
       />
     )
   );
