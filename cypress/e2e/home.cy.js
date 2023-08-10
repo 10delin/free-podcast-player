@@ -17,7 +17,7 @@ describe("Home Page", () => {
   });
 
   it("should reset the filter when the '❌' button is clicked", () => {
-    cy.get("input[type='text']").type("example podcast");
+    cy.get("input[type='text']").type("the");
     cy.getBySel("table-content").should("be.visible");
     cy.getBySel("table-item").should("be.visible");
     cy.getBySel("button-reset-filter").click();
