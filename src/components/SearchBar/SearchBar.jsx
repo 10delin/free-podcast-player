@@ -14,31 +14,32 @@ export const SearchBar = ({ originalPodcasts, setFilteredContent }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const { t } = useTranslation();
 
-  const OnSearchPodcast = (e) => {
-    e.preventDefault();
-
-    const onFilteredPodcasts = [...originalPodcasts].filter((podcast) =>
-      podcast.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const applyFilter = (inputValue) => {
+    const onFilteredPodcasts = originalPodcasts.filter((podcast) =>
+      podcast.title.toLowerCase().includes(inputValue.toLowerCase())
     );
-
-    if (onFilteredPodcasts.length === 0) {
-      alert(t("searchBar.notFound"));
-      setSearchTerm("");
-      setFilteredContent(originalPodcasts);
-      return;
-    }
 
     setFilteredContent(onFilteredPodcasts);
   };
 
-  const removeFilter = (e) => {
-    e.preventDefault();
+  const handleInputChange = (e) => {
+    const inputValue = e.target.value;
+    setSearchTerm(inputValue);
+
+    if (inputValue === "") {
+      setFilteredContent(originalPodcasts);
+    } else {
+      applyFilter(inputValue);
+    }
+  };
+
+  const removeFilter = () => {
     setSearchTerm("");
     setFilteredContent(originalPodcasts);
   };
 
   return (
-    <StyledWrapper onSubmit={OnSearchPodcast}>
+    <StyledWrapper>
       <StyledButton>
         <box-icon name="search" />
       </StyledButton>
@@ -46,7 +47,7 @@ export const SearchBar = ({ originalPodcasts, setFilteredContent }) => {
         type="text"
         placeholder={t("searchBar.placeHolder")}
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={handleInputChange}
       />
       {searchTerm ? (
         <StyledRemoveButton
